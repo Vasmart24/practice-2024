@@ -1,18 +1,18 @@
-// import Button from "./components/Button/Button";
+import Button from './components/Button/Button.jsx';
 // import Resources from "./components/Header/Resources";
 import { useState } from "react";
-import { baseResources } from "./resources/baseResources";
+import { baseResources } from './resources/baseResources';
 
-function Resource( props ) {
+function Resource( {name, count} ) {
   return (
         <li>
-          <p>{props.name}: {props.count}</p>
+          <p>{name}: {count}</p>
         </li>
       )}
 
 
 export default function App() {
-  // const [resources, setResources] = useState(baseResources);
+  // const [resources, setResources] = useState(0);
 
   return (
     <div>
@@ -21,12 +21,12 @@ export default function App() {
         <Resource {...baseResources[0]}></Resource>
         <Resource {...baseResources[1]}></Resource>
         <Resource {...baseResources[2]}></Resource>
+        <Button>increase Resource</Button>
         </ul>
       </main>
     </div>
   );
 }
-
 
 
 // const [isActionsModalOpened, setIsActionsModalOpened] = useState(false);

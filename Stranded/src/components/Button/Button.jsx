@@ -1,8 +1,12 @@
-// import './Button.css'
-// import { useState} from 'react'
+import './Button.css'
+import { useState} from 'react'
 
-// export default function Button({ children, onClick }) {
-//   const [content, onClick] = useState('')
+function Button({ children }) {
+  function handleClick() {
+    console.log('Resource increased!');
+  }
 
-//   return <button className='button active' onClick={onClick}>{ children }</button>
-// }
+  return <button className='button active' onClick={handleClick}>{ children }</button>
+}
+
+export default Button;
