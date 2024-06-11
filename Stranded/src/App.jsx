@@ -1,15 +1,8 @@
 import Button from './components/Button/Button.jsx';
 // import Resources from "./components/Header/Resources";
 import { useState } from "react";
-import { baseResources } from './resources/baseResources';
-
-function Resource( {name, count} ) {
-  return (
-        <li>
-          <p>{name}: {count}</p>
-        </li>
-      )}
-
+import { baseResources } from './resources/baseResources.js';
+import Resource from './resources/BaseResources.jsx';
 
 export default function App() {
   // const [resources, setResources] = useState(0);
