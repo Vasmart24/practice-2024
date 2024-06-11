@@ -1,4 +1,4 @@
-import BaseResource from "../../resources/BaseResource"
+import BaseResource from "../../resources/baseResources"
 
 export default function Resources(props) {
   return (

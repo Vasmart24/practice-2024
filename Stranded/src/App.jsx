@@ -1,16 +1,27 @@
-import Button from "./components/Button/Button";
-import Resources from "./components/Header/Resources";
+// import Button from "./components/Button/Button";
+// import Resources from "./components/Header/Resources";
 import { useState } from 'react';
-import BaseResource from "./resources/BaseResource";
+import { baseResources } from './resources/baseResources';
 
-function App() {
+function Resources() {
+  return (
+    <li>
+      <p>Древесина: 0</p>
+    </li>
+  )
+}
+
+export default function App() {
   return (
     <div>
       <main>
-        <ul>
-        <Resources name={BaseResource[0].name} count={BaseResource[0].count}></Resources>
-        <Resources></Resources>
-        </ul>
+        <div>
+          <ul>
+            <Resources></Resources>
+            <Resources></Resources>
+            <Resources></Resources>
+          </ul>
+        </div>
       </main>
     </div>
   )
