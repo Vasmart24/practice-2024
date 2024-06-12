@@ -7,9 +7,14 @@ import Futer from './components/Futer/Futer.jsx';
 import MainHeader from './components/MainHeader/MainHeader.jsx';
 import MainView from './components/MainView/MainView.jsx';
 
-export default function App() {
-  // const [resources, setResources] = useState(0);
+function increaseRes(resname = '') {
+  const resource = baseResources.find(({name}) => name === resname);
+  const index = baseResources.indexOf(resource);
+  baseResources[index].count += 1;
+  console.log(baseResources[index]);
+}
 
+export default function App() {
   return (
     <>
       {/* <main>
@@ -17,7 +22,9 @@ export default function App() {
         <Resource {...baseResources[0]}></Resource>
         <Resource {...baseResources[1]}></Resource>
         <Resource {...baseResources[2]}></Resource>
-        <Button>increase Resource</Button>
+        <Button onClick={ () => increaseRes('wood')}>Increase wood</Button>
+        <Button onClick={ () => increaseRes('stone')}>Increase stone</Button>
+        <Button onClick={ () => increaseRes('iron')}>Increase iron</Button>
         </ul>
       </main> */}
       <MainHeader/>
@@ -26,6 +33,7 @@ export default function App() {
     </>
   );
 }
+
 
 
 // const [isActionsModalOpened, setIsActionsModalOpened] = useState(false);
