@@ -1,12 +1,10 @@
-import './Button.css'
-import { useState} from 'react'
+import './Button.css';
+import { baseResources } from '../../resources/baseResources.js';
+import { useState} from 'react';
 
-function Button({ children }) {
-  function handleClick() {
-    console.log('Resource increased!');
-  }
+function Button({ children, onClick, isActive }) {
 
-  return <button className='button active' onClick={handleClick}>{ children }</button>
+  return <button className={isActive ? 'button active' : 'button'} onClick={onClick}>{ children }</button>
 }
 
 export default Button;
