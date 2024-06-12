@@ -6,6 +6,7 @@
 import Futer from './components/Futer/Futer.jsx';
 import MainHeader from './components/MainHeader/MainHeader.jsx';
 import MainView from './components/MainView/MainView.jsx';
+import HeaderResources from './components/HeaderResources/HeaderResources.jsx';
 
 function increaseRes(resname = '') {
   const resource = baseResources.find(({name}) => name === resname);
