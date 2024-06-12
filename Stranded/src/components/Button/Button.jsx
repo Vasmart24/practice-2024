@@ -1,12 +1,6 @@
-import './Button.css'
-import { useState } from 'react'
+import './button.css'
 
-function Button({ children }) {
-  function handleClick() {
-    console.log('Resource increased!');
-  }
+export default function Button({ onClick, onMouseEnter, onMouseLeave, isActive, children}) {
 
-  return <button className='button active' onClick={handleClick}>{ children }</button>
+  return <button onMouseLeave={onMouseLeave} onMouseEnter={onMouseEnter} className={ isActive ? 'button active' : 'button' } onClick={ onClick }>{ children }</button>
 }
-
-export default Button;

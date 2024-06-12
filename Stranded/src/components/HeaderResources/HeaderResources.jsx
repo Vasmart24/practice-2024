@@ -5,7 +5,7 @@ export default function HeaderResources() {
     <ul>
         <li>
             {baseResources.map(({key, name, count}) => {
-               return <p key={key}>{name} : {count}</p>
+               return <p key={key}>{name}: {count}</p>
             })}
         </li>
     </ul>

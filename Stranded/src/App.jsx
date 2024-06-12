@@ -1,19 +1,12 @@
 // import Button from './components/Button/Button.jsx';
 // import Resources from "./components/Header/Resources";
 // import { useState } from "react";
-// import { baseResources } from './resources/baseResources.js';
 // import Resource from './resources/BaseResources.jsx';
-import Futer from './components/Futer/Futer.jsx';
+
 import MainHeader from './components/MainHeader/MainHeader.jsx';
 import MainView from './components/MainView/MainView.jsx';
-import HeaderResources from './components/HeaderResources/HeaderResources.jsx';
-
-function increaseRes(resname = '') {
-  const resource = baseResources.find(({name}) => name === resname);
-  const index = baseResources.indexOf(resource);
-  baseResources[index].count += 1;
-  console.log(baseResources[index]);
-}
+import Footer from './components/Footer/Footer'
+// import HeaderResources from './components/HeaderResources/HeaderResources.jsx';
 
 export default function App() {
   return (
@@ -30,7 +23,7 @@ export default function App() {
       </main> */}
       <MainHeader/>
       <MainView/>
-      <Futer/>
+      <Footer/>
     </>
   );
 }
