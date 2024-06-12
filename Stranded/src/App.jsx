@@ -1,23 +1,29 @@
-import Button from './components/Button/Button.jsx';
+// import Button from './components/Button/Button.jsx';
 // import Resources from "./components/Header/Resources";
-import { useState } from "react";
-import { baseResources } from './resources/baseResources.js';
-import Resource from './resources/BaseResources.jsx';
+// import { useState } from "react";
+// import { baseResources } from './resources/baseResources.js';
+// import Resource from './resources/BaseResources.jsx';
+import Futer from './components/Futer/Futer.jsx';
+import MainHeader from './components/MainHeader/MainHeader.jsx';
+import MainView from './components/MainView/MainView.jsx';
 
 export default function App() {
   // const [resources, setResources] = useState(0);
 
   return (
-    <div>
-      <main>
+    <>
+      {/* <main>
         <ul>
         <Resource {...baseResources[0]}></Resource>
         <Resource {...baseResources[1]}></Resource>
         <Resource {...baseResources[2]}></Resource>
         <Button>increase Resource</Button>
         </ul>
-      </main>
-    </div>
+      </main> */}
+      <MainHeader/>
+      <MainView/>
+      <Futer/>
+    </>
   );
 }
 
