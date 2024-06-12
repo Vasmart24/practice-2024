@@ -1,4 +1,4 @@
-import Button from "../Button/Button"
+import Button from '../Button/Button.jsx'
 import "./Futer.css"
 
 export default function Futer() {
