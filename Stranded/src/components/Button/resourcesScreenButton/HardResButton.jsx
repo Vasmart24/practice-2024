@@ -1,11 +1,15 @@
-import Button from "../Button";
+import Button from "../Button.jsx";
 import "../Button.css";
 
-export default function HardResButton() {
+function HardResButton() {
   return (
-    <Button>
-      <div>Сложный уровень</div>
-      <div>Богатые ресурсы</div>
-    </Button>
+    <>
+      <Button>
+        <div>Сложный уровень</div>
+        <div>Богатые ресурсы</div>
+      </Button>
+    </>
   );
 }
+
+export default HardResButton;
