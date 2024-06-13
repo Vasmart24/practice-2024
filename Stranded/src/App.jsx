@@ -5,7 +5,7 @@
 
 import MainHeader from './components/MainHeader/MainHeader.jsx';
 import MainView from './components/MainView/MainView.jsx';
-import Footer from './components/Footer/Footer'
+import MainScreenFooter from './components/MainScreenFooter/MainScreenFooter.jsx'
 // import HeaderResources from './components/HeaderResources/HeaderResources.jsx';
 
 export default function App() {
@@ -23,7 +23,7 @@ export default function App() {
       </main> */}
       <MainHeader/>
       <MainView/>
-      <Footer/>
+      <MainScreenFooter/>
     </>
   );
 }
