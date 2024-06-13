@@ -1,4 +1,7 @@
-import Button from "../components/Button/Button.jsx";
+import StartResButton from "../components/Button/resourcesScreenButton/StartResButton";
+import EasyResButton from "../components/Button/resourcesScreenButton/EasyResButton";
+import MediumResButton from "../components/Button/resourcesScreenButton/EasyResButton";
+import HardResButton from "../components/Button/resourcesScreenButton/EasyResButton";
 
 export default function ScreenGetResources() {
   return (
