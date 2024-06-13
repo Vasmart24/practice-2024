@@ -1,14 +1,8 @@
-// import Button from './components/Button/Button.jsx';
-// import Resources from "./components/Header/Resources";
-// import { useState } from "react";
-// import Resource from './resources/BaseResources.jsx';
-
 import MainScreen from "./screens/MainScreen/MainScreen.jsx";
 import ScreenSearch from "./screens/ScreenSearch.jsx";
 import ScreenGetResources from "./screens/ScreenGetResources.jsx";
 import { useState } from "react";
 import { baseResources } from "./resources/baseResources.js";
-// import HeaderResources from './components/HeaderResources/HeaderResources.jsx';
 
 const countsData = {
   0: baseResources.find((res) => res.key === 0).count,
