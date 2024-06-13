@@ -1,17 +1,22 @@
-import { useState } from "react";
 import Button from "../Button";
-import '../Button.css'
+import "../Button.css";
+import Modal from "../../Modal/Modal";
+import { useState } from "react";
 
 export default function ActionButton() {
-  const [isActive, setIsActive] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  function openModal(text) {
-    console.log(text);
+  function openModal() {
+    setIsModalOpen(true);
   }
 
-  return(
+  return (
     <>
-    <Button  onMouseEnter={() => setIsActive(true)} onMouseLeave={() => setIsActive(false)} onClick={() => openModal('actionsModal')} isActive={isActive}>Actions</Button>
+      <Button onClick={openModal}>Actions</Button>
+      <Modal open={isModalOpen}>
+        SOME MODAL TEXT
+        <Button onClick={() => setIsModalOpen(false)}>Close modal</Button>
+      </Modal>
     </>
-  )
+  );
 }

@@ -3,11 +3,11 @@
 // import { useState } from "react";
 // import Resource from './resources/BaseResources.jsx';
 
-import MainHeader from './components/MainHeader/MainHeader.jsx';
-import MainView from './components/MainView/MainView.jsx';
-import Footer from './components/Footer/Footer';
-import ScreenSearch from './screens/ScreenSearch.jsx';
-import ScreenGetResources from './screens/ScreenGetResources.jsx';
+import MainHeader from "./components/MainHeader/MainHeader.jsx";
+import MainView from "./components/MainView/MainView.jsx";
+import MainScreenFooter from "./components/MainScreenFooter/MainScreenFooter.jsx";
+import ScreenSearch from "./screens/ScreenSearch.jsx";
+import ScreenGetResources from "./screens/ScreenGetResources.jsx";
 // import HeaderResources from './components/HeaderResources/HeaderResources.jsx';
 
 export default function App() {
@@ -23,16 +23,14 @@ export default function App() {
         <Button onClick={ () => increaseRes('iron')}>Increase iron</Button>
         </ul>
       </main> */}
-      <ScreenSearch/>
-      <ScreenGetResources/>
-      <MainHeader/>
-      <MainView/>
-      <Footer/>
+      <ScreenSearch />
+      <ScreenGetResources />
+      <MainHeader />
+      <MainView />
+      <MainScreenFooter />
     </>
   );
 }
-
-
 
 // const [isActionsModalOpened, setIsActionsModalOpened] = useState(false);
 

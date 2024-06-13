@@ -10,9 +10,6 @@
 
 .button:hover {
   opacity: 0.8;
-}
-
-.button.active {
   background: #3e6ae1;
   color: #fff;
 }
