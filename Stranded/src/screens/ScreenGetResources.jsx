@@ -4,7 +4,7 @@ import MediumResButton from "../components/Button/resourcesScreenButton/MediumRe
 import HardResButton from "../components/Button/resourcesScreenButton/HardResButton";
 
 export default function ScreenGetResources({ increaseCount }) {
-  console.log("мима", increaseCount);
+  console.log("мы в ScreenGetResources!!!", increaseCount);
   return (
     <div>
       <StartResButton increaseCount={increaseCount}></StartResButton>

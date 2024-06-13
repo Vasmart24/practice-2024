@@ -3,9 +3,7 @@
 // import { useState } from "react";
 // import Resource from './resources/BaseResources.jsx';
 
-import MainHeader from "./components/MainHeader/MainHeader.jsx";
-import MainView from "./components/MainView/MainView.jsx";
-import MainScreenFooter from "./components/MainScreenFooter/MainScreenFooter.jsx";
+import MainScreen from "./screens/MainScreen/MainScreen.jsx";
 import ScreenSearch from "./screens/ScreenSearch.jsx";
 import ScreenGetResources from "./screens/ScreenGetResources.jsx";
 import { useState } from "react";
@@ -35,9 +33,7 @@ export default function App() {
     <>
       <ScreenSearch />
       <ScreenGetResources increaseCount={increaseCount} />
-      <MainHeader counts={counts} />
-      <MainView />
-      <MainScreenFooter />
+      <MainScreen counts={counts}></MainScreen>
     </>
   );
 }

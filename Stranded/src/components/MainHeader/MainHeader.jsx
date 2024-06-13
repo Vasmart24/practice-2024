@@ -3,7 +3,7 @@ import "./MainHeader.css";
 import { blockNames } from "../../data.js";
 import HeaderResources from "../HeaderResources/HeaderResources.jsx";
 
-export default function MainHeader({ counts }) {
+function MainHeader({ counts }) {
   console.log("жужа", counts);
   return (
     <div className="header">
@@ -14,3 +14,5 @@ export default function MainHeader({ counts }) {
     </div>
   );
 }
+
+export default MainHeader;
