@@ -1,9 +1,11 @@
-function Resource( {name, count} ) {
+function Resource({ name, count }) {
   return (
     <li>
-      <p>{name}: {count}</p>
+      <p>
+        {name}: {count}
+      </p>
     </li>
-  )
+  );
 }
 
-export default Resource
+export default Resource;
