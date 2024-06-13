@@ -3,13 +3,14 @@ import EasyResButton from "../components/Button/resourcesScreenButton/EasyResBut
 import MediumResButton from "../components/Button/resourcesScreenButton/MediumResButton";
 import HardResButton from "../components/Button/resourcesScreenButton/HardResButton";
 
-export default function ScreenGetResources() {
+export default function ScreenGetResources({ increaseCount }) {
+  console.log("мима", increaseCount);
   return (
     <div>
-      <StartResButton></StartResButton>
-      <EasyResButton></EasyResButton>
-      <MediumResButton></MediumResButton>
-      <HardResButton></HardResButton>
+      <StartResButton increaseCount={increaseCount}></StartResButton>
+      <EasyResButton increaseCount={increaseCount}></EasyResButton>
+      <MediumResButton increaseCount={increaseCount}></MediumResButton>
+      <HardResButton increaseCount={increaseCount}></HardResButton>
     </div>
   );
 }

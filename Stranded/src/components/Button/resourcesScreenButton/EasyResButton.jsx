@@ -3,16 +3,15 @@ import "../Button.css";
 import { baseResources } from "./../../../resources/baseResources.js";
 import { useState } from "react";
 
-function EasyResButton() {
-  const [count, setCount] = useState(
-    baseResources.find((res) => res.key === 1).count
-  );
-
-  console.log(count);
-
+function EasyResButton({ increaseCount }) {
+  const resKey = 1;
   return (
     <>
-      <Button>
+      <Button
+        onClick={() => {
+          increaseCount(resKey);
+        }}
+      >
         <div>Лёгкий уровень</div>
         <div>бедные ресурсов</div>
       </Button>

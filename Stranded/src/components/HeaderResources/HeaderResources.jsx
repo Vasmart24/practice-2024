@@ -1,14 +1,16 @@
-import { baseResources } from "../../resources/baseResources"
+import { baseResources } from "../../resources/baseResources";
 
-export default function HeaderResources() {
-  return(
+export default function HeaderResources({ counts }) {
+  console.log("мужа", counts);
+  return (
     <ul>
-        <li>
-            {baseResources.map(({key, name, count}) => {
-               return <p key={key}>{name}: {count}</p>
-            })}
-        </li>
+      {baseResources.map(({ key, name }) => {
+        return (
+          <p key={key}>
+            {name}: {counts[key]}
+          </p>
+        );
+      })}
     </ul>
-
-  )
+  );
 }

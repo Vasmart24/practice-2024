@@ -8,14 +8,34 @@ import MainView from "./components/MainView/MainView.jsx";
 import MainScreenFooter from "./components/MainScreenFooter/MainScreenFooter.jsx";
 import ScreenSearch from "./screens/ScreenSearch.jsx";
 import ScreenGetResources from "./screens/ScreenGetResources.jsx";
+import { useState } from "react";
+import { baseResources } from "./resources/baseResources.js";
 // import HeaderResources from './components/HeaderResources/HeaderResources.jsx';
 
+const countsData = {
+  0: baseResources.find((res) => res.key === 0).count,
+  1: baseResources.find((res) => res.key === 1).count,
+  2: baseResources.find((res) => res.key === 2).count,
+  3: baseResources.find((res) => res.key === 3).count,
+};
+
 export default function App() {
+  const [counts, setCounts] = useState(countsData);
+  console.log(counts);
+
+  function increaseCount(resKey) {
+    setCounts((counts) => {
+      const newCounts = { ...counts, [resKey]: counts[resKey] + 1 };
+      console.log(newCounts);
+      return newCounts;
+    });
+  }
+
   return (
     <>
       <ScreenSearch />
-      <ScreenGetResources />
-      <MainHeader />
+      <ScreenGetResources increaseCount={increaseCount} />
+      <MainHeader counts={counts} />
       <MainView />
       <MainScreenFooter />
     </>
