@@ -14,7 +14,20 @@ export default function ActionButton() {
     <>
       <Button onClick={openModal}>Actions</Button>
       <Modal open={isModalOpen}>
-        SOME MODAL TEXT
+        <Button
+          onClick={() => {
+            console.log("Search for");
+          }}
+        >
+          Search for
+        </Button>
+        <Button
+          onClick={() => {
+            console.log("Buildings");
+          }}
+        >
+          Buildings
+        </Button>
         <Button onClick={() => setIsModalOpen(false)}>Close modal</Button>
       </Modal>
     </>
