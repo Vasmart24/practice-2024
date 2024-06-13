@@ -1,7 +1,5 @@
 import Button from "../Button.jsx";
 import "../Button.css";
-import { baseResources } from "./../../../resources/baseResources.js";
-import { useState } from "react";
 
 function EasyResButton({ increaseCount }) {
   const resKey = 1;
