@@ -13,16 +13,6 @@ import ScreenGetResources from "./screens/ScreenGetResources.jsx";
 export default function App() {
   return (
     <>
-      {/* <main>
-        <ul>
-        <Resource {...baseResources[0]}></Resource>
-        <Resource {...baseResources[1]}></Resource>
-        <Resource {...baseResources[2]}></Resource>
-        <Button onClick={ () => increaseRes('wood')}>Increase wood</Button>
-        <Button onClick={ () => increaseRes('stone')}>Increase stone</Button>
-        <Button onClick={ () => increaseRes('iron')}>Increase iron</Button>
-        </ul>
-      </main> */}
       <ScreenSearch />
       <ScreenGetResources />
       <MainHeader />
