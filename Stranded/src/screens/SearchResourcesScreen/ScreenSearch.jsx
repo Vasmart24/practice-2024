@@ -1,4 +1,4 @@
-import Button from '../components/Button/Button.jsx';
+import Button from '../../components/Button/Button.jsx';
 import { useState } from 'react';
 
 // Объявляем компонент RangeSlider
