@@ -3,7 +3,7 @@ import EasyResButton from "../../components/Button/resourcesScreenButton/EasyRes
 import MediumResButton from "../../components/Button/resourcesScreenButton/MediumResButton";
 import HardResButton from "../../components/Button/resourcesScreenButton/HardResButton";
 
-export default function ScreenGetResources() {
+export default function GetResourcesScreen() {
   return (
     <div>
       <StartResButton increaseCount={increaseCount}></StartResButton>

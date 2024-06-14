@@ -1,13 +1,13 @@
-import ScreenGetResources from "../GetResourcesScreen/ScreenGetResources";
+import ScreenGetResources from "../GetResourcesScreen/GetResourcesScreen";
 import MainScreen from "../MainScreen/MainScreen";
-import ScreenSearch from "../SearchResourcesScreen/ScreenSearch";
+import ScreenSearch from "../SearchResourcesScreen/SearchScreen";
 
 export default function GameScreen({ active }) {
   return (
     <>
-      {active === "ScreenGetResources" && <ScreenGetResources />}
+      {active === "GetResourcesScreen" && <ScreenGetResources />}
       {active === "MainScreen" && <MainScreen />}
-      {active === "ScreenSearch" && <ScreenSearch />}
+      {active === "SearchScreen" && <ScreenSearch />}
     </>
   );
 }
