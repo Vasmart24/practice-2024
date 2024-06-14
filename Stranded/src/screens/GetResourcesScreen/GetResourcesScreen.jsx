@@ -6,10 +6,10 @@ import HardResButton from "../../components/Button/resourcesScreenButton/HardRes
 export default function GetResourcesScreen() {
   return (
     <div>
-      <StartResButton increaseCount={increaseCount}></StartResButton>
-      <EasyResButton increaseCount={increaseCount}></EasyResButton>
-      <MediumResButton increaseCount={increaseCount}></MediumResButton>
-      <HardResButton increaseCount={increaseCount}></HardResButton>
+      <StartResButton></StartResButton>
+      <EasyResButton></EasyResButton>
+      <MediumResButton></MediumResButton>
+      <HardResButton></HardResButton>
     </div>
   );
 }
