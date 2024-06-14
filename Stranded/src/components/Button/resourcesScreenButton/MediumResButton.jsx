@@ -1,6 +1,6 @@
 import Button from "../Button.jsx";
 import "../Button.css";
-import { baseResources } from "./../../../resources/baseResources.js";
+import { baseResources } from "../../../Data/headerData/materialsData.js";
 import { useState } from "react";
 
 function MediumResButton({ increaseCount }) {

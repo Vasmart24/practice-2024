@@ -1,6 +1,6 @@
-import { baseResources } from "../../resources/baseResources";
+import { baseResources } from "../../../Data/resources/materialsData";
 
-function HeaderResources({ counts }) {
+function HeaderBMaterials({ counts }) {
   return (
     <ul>
       {baseResources.map(({ key, name }) => {
@@ -14,4 +14,4 @@ function HeaderResources({ counts }) {
   );
 }
 
-export default HeaderResources;
+export default HeaderBMaterials;
