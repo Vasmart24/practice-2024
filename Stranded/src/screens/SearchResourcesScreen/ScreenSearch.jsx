@@ -25,7 +25,7 @@ const RangeSlider = () => {
       </div>
     );
   };
-  
+
   // Главный компонент ScreenSearch, в который включаем RangeSlider
   export default function ScreenSearch () {
     return (
