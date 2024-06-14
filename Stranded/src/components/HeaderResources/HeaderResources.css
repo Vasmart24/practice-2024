@@ -1,0 +1,20 @@
+.list-item {
+    width: 25vh;
+	display: inline-flex;
+	padding: 10px 0;
+	color: #fff;
+	background: grey;
+	font-size: 16px;
+	border: 1px solid #fff;
+    justify-content: center ;
+}
+
+.list-item_resource {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0;
+  padding-top: 0;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
