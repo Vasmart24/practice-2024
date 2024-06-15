@@ -1,6 +1,6 @@
-import Button from "../../components/Button/Button";
+import Button from "../../components/Button/Button.jsx";
 import "./BattleScreenMain.css"
-import BattleScreenWeaponList from "./BattleScreenWeaponList";
+import BattleScreenWeaponList from './BattleScreenWeaponList.jsx';
 
 
 export default function BattleScreenMain() {
