@@ -1,4 +1,5 @@
 import { baseResources } from "../../Data/headerData/materialsData";
+import "./Header.css"
 
 function Header() {
   return (
