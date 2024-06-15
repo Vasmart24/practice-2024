@@ -1,0 +1,18 @@
+.list {
+  display: inline-flex;
+  width: 100%;
+  flex-flow: row nowrap;
+  align-items: center;
+  align-content: space-between;
+  justify-content: space-between;
+  margin-bottom: 5em;
+  margin-top: 5em;
+  background-color: grey;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.list-item {
+  text-align: center;
+  font-size: 20px;
+}

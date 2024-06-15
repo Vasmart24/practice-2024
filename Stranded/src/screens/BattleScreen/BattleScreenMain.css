@@ -1,0 +1,54 @@
+.screen {
+  display: flex;
+}
+
+.newbutton {
+  font-weight: bolder;
+  color: red;
+}
+
+.main {
+    width: 100%;
+}
+
+.screen_item-span {
+  width: 20vh;
+  align-content: center;
+  text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    justify-content: stretch;
+    align-items: stretch;
+    gap: 1em;
+  }
+  
+  .grid_item {
+    border: 1px solid orange;
+    text-align: center;
+  }
+  
+/* .grid_item-stranch {
+  grid-row-start: 4;
+  grid-column-start: 3;
+  grid-row-end: 4;
+  grid-column-end: 4;
+} */
+
+.weapon {
+    display: flex;
+}
+
+.weapon-list {
+  display: flex;
+  justify-content: center;
+}
+
+.center {
+    text-align: center;
+    padding-bottom: 2em;
+    padding-top: 2em;
+}
