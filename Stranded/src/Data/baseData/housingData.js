@@ -4,34 +4,35 @@ const generateHousingData = (lvl = 1) => {
   const isSteelRequired = lvl >= 4;
 
   const isMintesMore60 = (30 * lvl) % 60 === 0;
-  
+
   return {
-      cost: {
-        wood:  5 * (2 ** lvl),
-        stone: isStoneRequired ? 5 * (2 ** (lvl - 1)) : null,
-        iron: isIronRequired ? 5 * (2 ** (lvl - 2)) : null,
-        steel: isSteelRequired ? 5 * (2 ** (lvl - 3)) : null,
-        steel: isSteelRequired ? 5 * (2 ** (lvl - 4)) : null,
-      },
+    cost: {
+      wood: 5 * 2 ** lvl,
+      stone: isStoneRequired ? 5 * 2 ** (lvl - 1) : null,
+      iron: isIronRequired ? 5 * 2 ** (lvl - 2) : null,
+      steel: isSteelRequired ? 5 * 2 ** (lvl - 3) : null,
+    },
 
-      buildTime: {
-        minutes: isMintesMore60 ? 0 : 30,
-        hours: 6 * lvl + isMintesMore60 ? 0 : 1,
-      },
+    buildTime: {
+      minutes: isMintesMore60 ? 0 : 30,
+      hours: 6 * lvl + isMintesMore60 ? 0 : 1,
+    },
 
-      currentHousesCount: 0,
-      maxCivPerHouse: Math.round(5 * (1.5 ** lvl)),
-      maxHousesCount: Math.round(10 - (1.5 ** lvl)), 
-  }
+    currentHousesCount: 0,
+    maxCivPerHouse: Math.round(5 * 1.5 ** lvl),
+    maxHousesCount: Math.round(10 - 1.5 ** lvl),
+  };
 };
 
-export default housingData = {
+const housingData = {
   lvl1: generateHousingData(1),
   lvl2: generateHousingData(2),
   lvl3: generateHousingData(3),
   lvl4: generateHousingData(4),
   lvl5: generateHousingData(5),
 };
+
+export default housingData;
 
 // {
 //   lvl1: {
@@ -94,7 +95,7 @@ export default housingData = {
 //       hours: 24,
 //       minutes: 30,
 //     },
-  
+
 //     housesCount: 0,
 //     maxCiv: 25,
 //     maxHouses: 3,
