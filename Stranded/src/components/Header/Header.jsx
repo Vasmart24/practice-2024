@@ -1,15 +1,15 @@
 import { baseResources } from "../../Data/headerData/materialsData";
-import "./Header.css"
+import "./Header.css";
 
 function Header() {
   return (
-    <header>
-      <ul>
+    <header className="header">
+      <ul className="header__list">
         {baseResources.map(({ key, name, count }) => {
           return (
-            <p key={key}>
+            <li key={key}>
               {name}: {count}
-            </p>
+            </li>
           );
         })}
       </ul>

@@ -3,6 +3,7 @@ import GameScreen from "./screens/GameScreen/GameScreen.jsx";
 import Header from "./components/Header/Header.jsx";
 import Button from "./components/Button/Button.jsx";
 import { Dropdown, theme } from "antd";
+import "./Game.css";
 
 const items = [
   {
@@ -35,7 +36,7 @@ export default function Game() {
   } = theme.useToken();
 
   return (
-    <div>
+    <div className="game-container">
       <Header />
       <Dropdown
         menu={{
@@ -43,21 +44,13 @@ export default function Game() {
         }}
         trigger={["contextMenu"]}
       >
-        <div
-          style={{
-            color: colorTextTertiary,
-            background: colorBgLayout,
-            height: 200,
-            textAlign: "center",
-            lineHeight: "200px",
-          }}
-        >
+        <div>
           <GameScreen active={screen} setScreen={setScreen} />
         </div>
       </Dropdown>
-      <Button onClick={() => setScreen("start")}>start screen</Button>
+      {/* <Button onClick={() => setScreen("start")}>start screen</Button>
       <Button onClick={() => setScreen("resources")}>resources screen</Button>
-      <Button onClick={() => setScreen("search")}>search screen</Button>
+      <Button onClick={() => setScreen("search")}>search screen</Button> */}
     </div>
   );
 }

@@ -5,10 +5,10 @@ import "./GameScreen.css";
 
 export default function GameScreen({ active, setScreen }) {
   return (
-    <>
+    <div className="gameScreen">
       {active === "resources" && <GetResourcesScreen />}
       {active === "start" && <MainScreen />}
       {active === "search" && <SearchScreen />}
-    </>
+    </div>
   );
 }

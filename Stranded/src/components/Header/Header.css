@@ -1,4 +1,4 @@
-  /* <!-- ЗАГОЛОВОК ОСНОВНОГО ЭКРАНА -->
+/* <!-- ЗАГОЛОВОК ОСНОВНОГО ЭКРАНА -->
 
 <div class="border header">
   <div class="button list-item">доска</div>
@@ -8,21 +8,34 @@
 </div> */
 
 .button {
-    border: 3px solid orange;
-  }
-  .border {
-    border: 3px solid blue;
-  }
-  .header {
-    display: inline-flex;
-  }
-  .list-item {
-    width: auto;
-      display: inline-flex;
-      padding: 10px 0;
-      color: #fff;
-      background: grey;
-      font-size: 16px;
-      border: 1px solid orange;
-    justify-content: center ;
-  }
+  border: 3px solid orange;
+}
+.border {
+  border: 3px solid blue;
+}
+.header {
+  display: inline-flex;
+  padding: 20px;
+  height: 60px;
+}
+.list-item {
+  width: auto;
+  display: inline-flex;
+  padding: 10px 0;
+  color: #fff;
+  background: grey;
+  font-size: 16px;
+  border: 1px solid orange;
+  justify-content: center;
+}
+
+.header__list {
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+}
+
+.header__list > li {
+  list-style: none;
+}
