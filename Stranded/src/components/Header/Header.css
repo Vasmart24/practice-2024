@@ -1,0 +1,28 @@
+  /* <!-- ЗАГОЛОВОК ОСНОВНОГО ЭКРАНА -->
+
+<div class="border header">
+  <div class="button list-item">доска</div>
+  <div class="button list-item">камень</div>
+  <div class="button list-item">пластик</div>
+  <div class="button list-item">стекло</div>
+</div> */
+
+.button {
+    border: 3px solid orange;
+  }
+  .border {
+    border: 3px solid blue;
+  }
+  .header {
+    display: inline-flex;
+  }
+  .list-item {
+    width: auto;
+      display: inline-flex;
+      padding: 10px 0;
+      color: #fff;
+      background: grey;
+      font-size: 16px;
+      border: 1px solid orange;
+    justify-content: center ;
+  }
