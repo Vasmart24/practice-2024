@@ -55,8 +55,7 @@ const screenStates = {
 
 export default function Game() {
   const { start, resources, search } = screenStates;
-  console.log(start, resources, search);
-  const [screen, setScreen] = useState("start");
+  const [screen, setScreen] = useState(start);
 
   // const {
   //   token: { colorBgLayout, colorTextTertiary },
