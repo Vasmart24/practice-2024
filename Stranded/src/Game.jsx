@@ -48,9 +48,9 @@ export default function Game() {
           <GameScreen active={screen} setScreen={setScreen} />
         </div>
       </Dropdown>
-      {/* <Button onClick={() => setScreen("start")}>start screen</Button>
+      <Button onClick={() => setScreen("start")}>start screen</Button>
       <Button onClick={() => setScreen("resources")}>resources screen</Button>
-      <Button onClick={() => setScreen("search")}>search screen</Button> */}
+      <Button onClick={() => setScreen("search")}>search screen</Button>
     </div>
   );
 }
