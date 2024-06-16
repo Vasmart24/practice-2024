@@ -4,7 +4,32 @@ import "./Header.css";
 function Header() {
   return (
     <header className="header">
-      <ul className="header__list">
+      <div className="header__item">
+        <div>
+          <div>Кол-во/трата в день: 0</div>
+          <div>Дней до смерти от голода: 0</div>
+        </div>
+      </div>
+      <div className="header__item">
+        <div>Ресурсы</div>
+      </div>
+      <div className="header__item">
+        <div>Жители</div>
+      </div>
+      <div className="header__item">
+        <div>Армия</div>
+      </div>
+      <div className="header__item">
+        <div>База</div>
+      </div>
+      <div className="header__item">
+        <div>Время</div>
+      </div>
+    </header>
+  );
+}
+
+/* <ul className="header__item header__list">
         {baseResources.map(({ key, name, count }) => {
           return (
             <li key={key}>
@@ -12,9 +37,6 @@ function Header() {
             </li>
           );
         })}
-      </ul>
-    </header>
-  );
-}
+      </ul> */
 
 export default Header;
