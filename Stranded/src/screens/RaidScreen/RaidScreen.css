@@ -14,7 +14,7 @@
   flex-wrap: wrap;
   width: 100vw;
   height: 80vh;
-  background-image: url();
+  background-image: url(../../assets/RaidScreen-BG.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -22,22 +22,41 @@
 
 .raid-screen button:nth-child(n) {
   padding: 5rem;
+  border: 3px solid #3a3a3a;
+  color: #fff;
 }
 
-.raid-screen button:nth-child(1):hover {
-  background-color: red;
+.raid-screen button:nth-child(n):hover {
+  scale: 1.05;
+  opacity: 0.95;
 }
 
-.raid-screen button:nth-child(2):hover {
-  background-color: yellow;
+.raid-screen button:nth-child(1) {
+  background-image: url(../../assets/RaidScreen-BG.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
-.raid-screen button:nth-child(3):hover {
-  background-color: green;
+.raid-screen button:nth-child(2) {
+  background-image: url(../../assets/RaidScreen-BG.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
-.raid-screen button:nth-child(4):hover {
-  background-color: purple;
+.raid-screen button:nth-child(3) {
+  background-image: url(../../assets/RaidScreen-BG.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.raid-screen button:nth-child(4) {
+  background-image: url(../../assets/RaidScreen-BG.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .modal_level {
@@ -60,7 +79,3 @@
     margin-top: 1em;
     margin-bottom: 1em;
   }
-
-.button {
-  border: 3px solid orange;
-}
