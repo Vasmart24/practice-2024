@@ -1,21 +1,12 @@
 import Button from "../Button.jsx";
 import "../Button.css";
-import { baseResources } from "../../../Data/headerData/materialsData.js";
-import { useState } from "react";
 
-function MediumResButton({ increaseCount }) {
-  const resKey = 2;
+function MediumResButton({ onClick }) {
   return (
-    <>
-      <Button
-        onClick={() => {
-          increaseCount(resKey);
-        }}
-      >
-        <div>Средний уровень</div>
-        <div>Нормальные ресурсы</div>
-      </Button>
-    </>
+    <Button onClick={onClick}>
+      <div>Средний уровень</div>
+      <div>Нормальные ресурсы</div>
+    </Button>
   );
 }
 

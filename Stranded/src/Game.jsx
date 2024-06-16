@@ -2,8 +2,15 @@ import { useState } from "react";
 import GameScreen from "./screens/GameScreen/GameScreen.jsx";
 import Header from "./components/Header/Header.jsx";
 import Button from "./components/Button/Button.jsx";
-import { Dropdown } from "antd";
+import { Dropdown, Modal } from "antd";
 import "./Game.css";
+
+const modalItems = [
+  {
+    label: "Я тебя понял",
+    key: "0",
+  },
+];
 
 const items = [
   {
@@ -56,6 +63,7 @@ const screenStates = {
 export default function Game() {
   const { start, resources, search } = screenStates;
   const [screen, setScreen] = useState(start);
+  const [isModalOpen, setIsModalOpen] = useState(true);
 
   // const {
   //   token: { colorBgLayout, colorTextTertiary },
@@ -83,6 +91,23 @@ export default function Game() {
       <Button onClick={() => setScreen(start)}>start screen</Button>
       <Button onClick={() => setScreen(resources)}>resources screen</Button>
       <Button onClick={() => setScreen(search)}>search screen</Button>
+      <Dropdown
+        menu={{
+          items: modalItems,
+          onClick: ({ key }) => {
+            if (key === "0") {
+              setIsModalOpen(false);
+            }
+          },
+        }}
+        trigger={["contextMenu"]}
+      >
+        <div>
+          <Modal title={"🐁"} open={isModalOpen} footer={null} closable={false}>
+            Используй ПКМ для взаимодействия с игрой
+          </Modal>
+        </div>
+      </Dropdown>
     </div>
   );
 }
