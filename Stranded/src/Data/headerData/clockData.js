@@ -1,6 +1,6 @@
 const clock = {
-    hours: 21,
-    minutes: 30,
+    hours: 8,
+    minutes: 0,
 };
 
 export default clock;
