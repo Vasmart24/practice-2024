@@ -1,113 +1,75 @@
 import { useState } from "react";
-import GameScreen from "./screens/GameScreen/GameScreen.jsx";
 import Header from "./components/Header/Header.jsx";
 import Button from "./components/Button/Button.jsx";
 import { Dropdown, Modal } from "antd";
+import screenStates from "./Data/screenData/screenStates.js";
 import "./Game.css";
-
-const modalItems = [
-  {
-    label: "Я тебя понял",
-    key: "0",
-  },
-];
-
-const items = [
-  {
-    label: "Строительство",
-    key: "1",
-  },
-  {
-    label: "Вылазка",
-    key: "2",
-    children: [
-      {
-        label: "Выжившие",
-        key: "6",
-      },
-      {
-        label: "Стройматериалы",
-        key: "7",
-      },
-      {
-        label: "Оружие",
-        key: "8",
-      },
-      {
-        label: "Припасы",
-        key: "9",
-      },
-    ],
-  },
-  {
-    label: "Снаряжение",
-    key: "3",
-  },
-  {
-    label: "Меню",
-    key: "4",
-  },
-  {
-    label: "Влюбиться",
-    key: "5",
-  },
-];
-
-// Чтобы в случае изменений строк менять их только в одном месте
-const screenStates = {
-  start: "start",
-  resources: "resources",
-  search: "search",
-};
+import RaidScreen from "./screens/RaidScreen/RaidScreen.jsx";
+import MainScreen from "./screens/MainScreen/MainScreen.jsx";
+import SearchScreen from "./screens/SearchResourcesScreen/SearchScreen.jsx";
+import raidScreenPropsData from "./Data/screenData/raidScreenPropsData.js";
 
 export default function Game() {
   const { start, resources, search } = screenStates;
+  const { survivors, building, weapon, supplies } =
+    raidScreenPropsData.resTypes;
+  const raidScreen = {
+    resType: survivors,
+  };
+
   const [screen, setScreen] = useState(start);
+  const [raidScreenProps, setRaidScreenProps] = useState(raidScreen);
   const [isModalOpen, setIsModalOpen] = useState(true);
 
-  // const {
-  //   token: { colorBgLayout, colorTextTertiary },
-  // } = theme.useToken();
+  const isDropdownActive = isModalOpen;
+
+  function handleSetScreen(screenName, props) {
+    if (screenName === resources) {
+      setScreen(resources);
+      setRaidScreenProps(props);
+    }
+  }
+
+  const dropdown = {
+    menu: {
+      items: [
+        {
+          label: "Я тебя понял",
+          key: "0",
+        },
+      ],
+      onClick: ({ key }) => {
+        if (key === "0") {
+          setIsModalOpen(false);
+        }
+      },
+    },
+    trigger: ["contextMenu"],
+  };
+
+  const modal = {
+    title: "🐁",
+    open: isModalOpen,
+    footer: null,
+    closable: false,
+    children: "Используй ПКМ для взаимодействия с игрой",
+  };
 
   return (
     <div className="game-container">
       <Header />
-      <Dropdown
-        menu={{
-          items,
-          onClick: ({ keyPath }) => {
-            const parentOptionKey = keyPath[1];
-            if (parentOptionKey === "2") {
-              setScreen(resources);
-            }
-          },
-        }}
-        trigger={["contextMenu"]}
-      >
-        <div>
-          <GameScreen active={screen} setScreen={setScreen} />
-        </div>
-      </Dropdown>
-      <Button onClick={() => setScreen(start)}>start screen</Button>
-      <Button onClick={() => setScreen(resources)}>resources screen</Button>
-      <Button onClick={() => setScreen(search)}>search screen</Button>
-      <Dropdown
-        menu={{
-          items: modalItems,
-          onClick: ({ key }) => {
-            if (key === "0") {
-              setIsModalOpen(false);
-            }
-          },
-        }}
-        trigger={["contextMenu"]}
-      >
-        <div>
-          <Modal title={"🐁"} open={isModalOpen} footer={null} closable={false}>
-            Используй ПКМ для взаимодействия с игрой
-          </Modal>
-        </div>
-      </Dropdown>
+      <div className="gameScreen">
+        {screen === "resources" && <RaidScreen {...raidScreenProps} />}
+        {screen === "start" && <MainScreen handleSetScreen={handleSetScreen} />}
+        {screen === "search" && <SearchScreen />}
+      </div>
+      {isDropdownActive && (
+        <Dropdown {...dropdown}>
+          <div>
+            <Modal {...modal} />
+          </div>
+        </Dropdown>
+      )}
     </div>
   );
 }

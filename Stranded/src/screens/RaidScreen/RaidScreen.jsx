@@ -1,27 +1,44 @@
 import "./RaidScreen.css";
-import StartResButton from "../../components/Button/resourcesScreenButton/StartResButton";
-import EasyResButton from "../../components/Button/resourcesScreenButton/EasyResButton";
-import MediumResButton from "../../components/Button/resourcesScreenButton/MediumResButton";
-import HardResButton from "../../components/Button/resourcesScreenButton/HardResButton";
+import StartResButton from "../../components/Button/raidScreenButtons/StartResButton";
+import EasyResButton from "../../components/Button/raidScreenButtons/EasyResButton";
+import MediumResButton from "../../components/Button/raidScreenButtons/MediumResButton";
+import HardResButton from "../../components/Button/raidScreenButtons/HardResButton";
 import SearchScreen from "../SearchResourcesScreen/SearchScreen";
-import { Dropdown, Modal } from "antd";
+import { Modal } from "antd";
 import { useState } from "react";
 
-export default function RaidScreen() {
+export default function RaidScreen({ resType }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  console.log(resType);
+
+  const modal = {
+    open: isModalOpen,
+    footer: null,
+    onCancel: () => setIsModalOpen(false),
+  };
 
   return (
     <div className="raid-screen">
-      <MediumResButton onClick={() => setIsModalOpen(true)}></MediumResButton>
-      <HardResButton onClick={() => setIsModalOpen(true)}></HardResButton>
-      <StartResButton className={'some'} onClick={() => setIsModalOpen(true)}></StartResButton>
-      <EasyResButton onClick={() => setIsModalOpen(true)}></EasyResButton>
+      <MediumResButton
+        resType={resType}
+        onClick={() => setIsModalOpen(true)}
+      ></MediumResButton>
+      <HardResButton
+        resType={resType}
+        onClick={() => setIsModalOpen(true)}
+      ></HardResButton>
+      <StartResButton
+        resType={resType}
+        className={"some"}
+        onClick={() => setIsModalOpen(true)}
+      ></StartResButton>
+      <EasyResButton
+        resType={resType}
+        onClick={() => setIsModalOpen(true)}
+      ></EasyResButton>
 
-      <Modal
-        open={isModalOpen}
-        footer={null}
-        onCancel={() => setIsModalOpen(false)}
-      >
+      <Modal {...modal}>
         <SearchScreen />
       </Modal>
     </div>
