@@ -14,8 +14,8 @@
   align-content: center;
   flex-wrap: wrap;
   width: 100vw;
-  height: 80vh;
-  background-image: url(../../assets/RaidScreen-BG.png);
+  height: 90vh;
+  background-image: url(../../assets/main-backgrounds/RaidScreen-BG.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -45,14 +45,14 @@
   scale: 1.5;
   opacity: 1;
   box-shadow: 0px 0px 70px #ffffff;
-  border: 3px solid #ffffff;
+  border: 2px solid #ffffff;
   transition: scale 0.3s;
 }
 
 .raid-screen button:nth-child(1) {
   top: 25vh;
   left: 32vw;
-  background-image: url(../../assets/easy1-bg.png);
+  background-image: url();
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -61,25 +61,25 @@
 .raid-screen button:nth-child(2) {
   top: 15vh;
   right: 32vw;
-  background-image: url(../../assets/easy2-bg.png);
+  background-image: url();
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 .raid-screen button:nth-child(3) {
-  bottom: 15vh;
+  bottom: 20vh;
   left: 32vw;
-  background-image: url(../../assets/easy3-bg.png);
+  background-image: url(../../assets/search-areas/easy-barn-bg.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 .raid-screen button:nth-child(4) {
-  bottom: 25vh;
+  bottom: 30vh;
   right: 32vw;
-  background-image: url(../../assets/easy4-bg.png);
+  background-image: url();
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -87,7 +87,7 @@
 
 .modal_level {
     width: 400px;
-    border: 3px solid orange;
+    border: 2px solid orange;
     border-radius: 10px;
   }
   
