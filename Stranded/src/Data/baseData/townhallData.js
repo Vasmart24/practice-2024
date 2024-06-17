@@ -20,6 +20,7 @@ const generateTownhallData = (lvl = 1) => {
 
     currenttownHallLvl: 0,
     maxSuppliesBuff: 5 ** lvl,
+    hp: 200 * (3 ** lvl) * (lvl >= 2 ? ((lvl + 1) / 3) : 1)
   };
 };
 
@@ -31,3 +32,8 @@ const townhallData = {
 };
 
 export default townhallData;
+
+// 1 - 600
+// 2 - 1800
+// 3 - 7200
+// 4 - 27000

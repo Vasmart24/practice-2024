@@ -18,7 +18,16 @@ const generateWallData = (lvl = 1) => {
       hours: 10 * lvl + (isMintesMore30 ? 0 : 1),
     },
 
-    def: 150 * (2 ** lvl),
+    def: {
+      pure: 
+      lvl === 4 ?
+      Math.floor((5 ** lvl) / 5) :
+      lvl > 1 ?
+      (5 ** lvl) / 2.5 : 5,
+      percent: 10 * lvl,
+    },
+
+    hp: 150 * (2 ** lvl) * (lvl >= 3 ? (lvl) : 1),
   }
 };
 
@@ -28,3 +37,8 @@ export default wallData = {
   lvl3: generateWallData(3),
   lvl4: generateWallData(4),
 };
+
+// 1 - 300|5/10%
+// 2 - 600|10/20%
+// 3 - 1800|50/30%
+// 4 - 4800|125/40%

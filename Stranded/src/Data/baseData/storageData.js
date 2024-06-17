@@ -18,31 +18,21 @@ const generateStorageData = (lvl = 1) => {
       hours: 6 * lvl + (isMintesMore30 ? 0 : 1),
     },
 
-    currentHousesCount: 0,
-    maxCivPerHouse: Math.round(5 * 1.5 ** lvl),
-    maxHouses: Math.round(10 - 1.5 ** lvl),
+    bonus: lvl === 4 ? 15 : 0, // скидка на постройки
+    currentStorageCount: 0, // текущее кол-во складов
+    maxStorages: Math.floor((10 * lvl) / (2 ** lvl)),
+    SupplyStorage: 15 * 2 ** lvl + lvl === 4 ? 5 : 0, // сколько добавляет места для рес-ов
   };
 };
 
 export default storageData = {
-  lvl1: {
-    StorageCount: 0,
-    maxSupplies: 30,
-    maxStorage: 8,
-  },
-  lvl2: {
-    StorageCount: 0,
-    maxSupplies: 50,
-    maxStorage: 6,
-  },
-  lvl3: {
-    StorageCount: 0,
-    maxSupplies: 90,
-    maxStorage: 4,
-  },
-  lvl4: {
-    StorageCount: 0,
-    maxSupplies: 140,
-    maxStorage: 2,
-  },
+  lvl1: generateStorageData(1),
+  lvl2: generateStorageData(2),
+  lvl3: generateStorageData(3),
+  lvl4: generateStorageData(4),
 };
+
+// 1 - 5/30
+// 2 - 5/60
+// 3 - 3/120
+// 4 - 2/245
