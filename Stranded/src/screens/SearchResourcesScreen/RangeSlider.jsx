@@ -1,3 +1,4 @@
+import './RangeSlider.css';
 import { useState } from 'react';
 import clock from '../../Data/headerData/clockData';
 

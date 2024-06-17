@@ -11,11 +11,11 @@ export default function RaidScreen() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div>
-      <StartResButton onClick={() => setIsModalOpen(true)}></StartResButton>
-      <EasyResButton onClick={() => setIsModalOpen(true)}></EasyResButton>
+    <div className="raid-screen">
       <MediumResButton onClick={() => setIsModalOpen(true)}></MediumResButton>
       <HardResButton onClick={() => setIsModalOpen(true)}></HardResButton>
+      <StartResButton className={'some'} onClick={() => setIsModalOpen(true)}></StartResButton>
+      <EasyResButton onClick={() => setIsModalOpen(true)}></EasyResButton>
 
       <Modal
         open={isModalOpen}
