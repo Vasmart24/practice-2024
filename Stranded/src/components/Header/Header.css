@@ -1,0 +1,65 @@
+/* <!-- ЗАГОЛОВОК ОСНОВНОГО ЭКРАНА -->
+
+<div class="border header">
+  <div class="button list-item">доска</div>
+  <div class="button list-item">камень</div>
+  <div class="button list-item">пластик</div>
+  <div class="button list-item">стекло</div>
+</div> */
+
+.button {
+  border: 3px solid orange;
+}
+.border {
+  border: 3px solid blue;
+}
+.header {
+  display: flex;
+  /* padding: 20px; */
+  justify-content: center;
+  height: 10vh;
+}
+.list-item {
+  width: auto;
+  display: inline-flex;
+  padding: 10px 0;
+  color: #fff;
+  background: grey;
+  font-size: 16px;
+  border: 1px solid orange;
+  justify-content: center;
+}
+
+.header__item {
+  position: relative;
+  width: 400px;
+  height: 100px;
+  padding: 20px 10px 20px 10px;
+  border-right: solid 1px;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+}
+
+.header__item:last-child {
+  border: none;
+}
+
+.header__item > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.header__list {
+  width: 100%;
+  display: flex;
+  /* gap: 15px; */
+  /* justify-content: space-between; */
+}
+
+.header__list > li {
+  list-style: none;
+}

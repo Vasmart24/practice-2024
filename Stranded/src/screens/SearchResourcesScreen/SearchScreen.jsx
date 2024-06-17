@@ -3,10 +3,13 @@ import RangeSlider from "./RangeSlider.jsx";
 
 // Главный компонент ScreenSearch, в который включаем RangeSlider
 export default function SearchScreen() {
+  const minRes = 0; // временно
+  const maxRes = 100; // временно
   return (
     <div>
-      <h1>React Ползунок</h1>
+      <h1>Поиск ресурсов</h1>
       <RangeSlider />
+      <span>Можно найти ресурсов: {minRes} — {maxRes}</span><br />
       <Button>Начать поиск</Button>
     </div>
   );

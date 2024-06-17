@@ -1,5 +1,15 @@
-.mainview {
+/* .mainview {
   width: 80vh;
   height: 70vh;
   border: 1px solid Red;
+} */
+
+.mainview {
+  display: flex;
+  position: relative;
+  /* width: 100vh; */
+  height: 90vh;
+  /* border: 1px solid; */
+  align-items: flex-start;
+  flex-direction: column;
 }
