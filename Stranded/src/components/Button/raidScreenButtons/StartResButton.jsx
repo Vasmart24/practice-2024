@@ -1,7 +1,8 @@
 import Button from "../Button.jsx";
 import "../Button.css";
 
-function StartResButton({ onClick }) {
+function StartResButton({ onClick, resType }) {
+  console.log(resType);
   return (
     <Button onClick={onClick}>
       <div>Стартовый уровень</div>
