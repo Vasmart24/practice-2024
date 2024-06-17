@@ -1,0 +1,111 @@
+/* <!-- Для модального окна, где выбираются уровни сложности -->
+
+<div class="modal_level">
+  <div class="button offset_left level-item">доска</div>
+  <div class="button offset_right level-item">камень</div>
+  <div class="button offset_left level-item">пластик</div>
+  <div class="button offset_right level-item">стекло</div>
+</div> */
+
+.raid-screen {
+  position: relative; /* Для позиционирования кнопок выбора сложности */
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 90vh;
+  background-image: url(../../assets/RaidScreen-BG.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.raid-screen::before {
+  content: '';
+  position: absolute; /* Обеспечиваем позиционирование псевдоэлемента */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px); /* Применяем размытие */
+  z-index: 1;
+}
+
+.raid-screen button:nth-child(n) {
+  position: absolute; /* Для позиционирования кнопок выбора сложности */
+  padding: 3rem;
+  background-color: #3a3a3a;
+  border: 3px solid #3a3a3a;
+  color: #fff;
+  z-index: 100;
+}
+
+.raid-screen button:nth-child(n):hover {
+  scale: 1.5;
+  opacity: 1;
+  box-shadow: 0px 0px 70px #ffffff;
+  border: 3px solid #ffffff;
+  transition: scale 0.3s;
+}
+
+.raid-screen button:nth-child(1) {
+  top: 25vh;
+  left: 32vw;
+  background-image: url(../../assets/easy1-bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.raid-screen button:nth-child(2) {
+  top: 15vh;
+  right: 32vw;
+  background-image: url(../../assets/easy2-bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.raid-screen button:nth-child(3) {
+  bottom: 15vh;
+  left: 32vw;
+  background-image: url(../../assets/easy3-bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.raid-screen button:nth-child(4) {
+  bottom: 25vh;
+  right: 32vw;
+  background-image: url(../../assets/easy4-bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.modal_level {
+    width: 400px;
+    border: 3px solid orange;
+    border-radius: 10px;
+  }
+  
+  .offset_right {
+      display: flex;
+      justify-content: right;
+      margin-right: 1em;
+  }
+  
+  .offset_left {
+    margin-left: 1em;
+  }
+  
+  .level-item {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .some {
+    border: 10px solid red;
+  }
