@@ -1,5 +1,5 @@
 import Button from "../../components/Button/Button.jsx"
-import "./BattleScreenFooter.css"
+import "./EquipmentScreenFooter.css"
 
 export default function BattleScreenFooter() {
   return(

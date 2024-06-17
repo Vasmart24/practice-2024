@@ -1,7 +1,7 @@
 import { baseResources } from "../../Data/headerData/materialsData";
-import "./BattleScreenHeader.css"
+import "./EquipmentScreenHeader.css"
 
-export default function BattleScreenHeader() {
+export default function EquipmentScreenHeader() {
   return(
     <div>
       <ul className="list">

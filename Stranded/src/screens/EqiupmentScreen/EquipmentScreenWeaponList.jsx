@@ -1,8 +1,8 @@
-import { baseResources } from "../../Data/headerData/materialsData";
+import { baseResources } from "../../Data/headerData/materialsData.js";
 import Button from "../../components/Button/Button.jsx";
-import "./BattleScreenWeaponList.css"
+import "./EquipmentScreenWeaponList.css"
 
-function BattleScreenWeaponList() {
+function EquipmentScreenWeaponList() {
   return(
     <div>
       <ul className="weapon_list">
@@ -16,4 +16,4 @@ function BattleScreenWeaponList() {
   );
 }
 
-export default BattleScreenWeaponList
+export default EquipmentScreenWeaponList

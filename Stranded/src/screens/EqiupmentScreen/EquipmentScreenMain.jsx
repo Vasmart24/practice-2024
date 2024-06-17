@@ -1,9 +1,9 @@
 import Button from "../../components/Button/Button.jsx";
 import "./BattleScreenMain.css"
-import BattleScreenWeaponList from './BattleScreenWeaponList.jsx';
+import EquipmentScreenWeaponList from './EquipmentScreenWeaponList.jsx';
 
 
-export default function BattleScreenMain() {
+export default function EquipmentScreenMain() {
   return(
     <div className="screen main">
         <div className="grid newbutton">
@@ -31,7 +31,7 @@ export default function BattleScreenMain() {
           </div>
         <div className="center">Доступные виды вооружений</div>
         <div className="weapon-list">
-          <BattleScreenWeaponList></BattleScreenWeaponList>
+          <EquipmentScreenWeaponList></EquipmentScreenWeaponList>
         </div>
       </div>
   </div>
