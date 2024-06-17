@@ -15,7 +15,7 @@ const generateHousingData = (lvl = 1) => {
 
     buildTime: {
       minutes: isMintesMore30 ? 0 : 30,
-      hours: 6 * lvl + (isMintesMore30 ? 0 : 1),
+      hours: 8 * lvl + (isMintesMore30 ? 0 : 1),
     },
 
     currentHousesCount: 0,

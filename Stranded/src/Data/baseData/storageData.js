@@ -45,4 +45,4 @@ export default storageData = {
     maxSupplies: 140,
     maxStorage: 2,
   },
-}
+};

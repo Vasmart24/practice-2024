@@ -16,7 +16,7 @@ const generateFarmsData = (lvl = 1) => {
 
     buildTime: {
       minutes: isMintesMore30 ? 0 : 30,
-      hours: 4 * lvl + (isMintesMore30 ? 0 : 1),
+      hours: 5 * lvl + (isMintesMore30 ? 0 : 1),
     },
 
     currentWorkers: 0,
@@ -30,6 +30,6 @@ const farmsData = {
   lvl2: generateFarmsData(2),
   lvl3: generateFarmsData(3),
   lvl4: generateFarmsData(4),
-}
+};
 
 export default farmsData;

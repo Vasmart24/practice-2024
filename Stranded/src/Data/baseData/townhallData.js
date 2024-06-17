@@ -28,6 +28,6 @@ const townhallData = {
   lvl2: generateTownhallData(2),
   lvl3: generateTownhallData(3),
   lvl4: generateTownhallData(4),
-}
+};
 
 export default townhallData;
