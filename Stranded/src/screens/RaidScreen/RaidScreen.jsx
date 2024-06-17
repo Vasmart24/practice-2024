@@ -12,10 +12,10 @@ export default function RaidScreen() {
 
   return (
     <div className="raid-screen">
-      <StartResButton className={'some'} onClick={() => setIsModalOpen(true)}></StartResButton>
-      <EasyResButton onClick={() => setIsModalOpen(true)}></EasyResButton>
       <MediumResButton onClick={() => setIsModalOpen(true)}></MediumResButton>
       <HardResButton onClick={() => setIsModalOpen(true)}></HardResButton>
+      <StartResButton className={'some'} onClick={() => setIsModalOpen(true)}></StartResButton>
+      <EasyResButton onClick={() => setIsModalOpen(true)}></EasyResButton>
 
       <Modal
         open={isModalOpen}
