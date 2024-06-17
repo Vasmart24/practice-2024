@@ -41,7 +41,7 @@
 }
 
 .raid-screen button:nth-child(n):hover {
-  scale: 1.05;
+  scale: 1.5;
   opacity: 0.95;
 }
 
