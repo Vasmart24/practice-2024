@@ -8,26 +8,23 @@ import RaidScreen from "./screens/RaidScreen/RaidScreen.jsx";
 import MainScreen from "./screens/MainScreen/MainScreen.jsx";
 import SearchScreen from "./screens/SearchResourcesScreen/SearchScreen.jsx";
 import raidScreenPropsData from "./Data/screenData/raidScreenPropsData.js";
+import EquipmentScreen from "./screens/EqiupmentScreen/EquipmentScreen.jsx";
 
 export default function Game() {
-  const { start, resources, search } = screenStates;
-  const { survivors, building, weapon, supplies } =
-    raidScreenPropsData.resTypes;
-  const raidScreen = {
-    resType: survivors,
-  };
+  const { start, resources, search, equipment } = screenStates;
+  const { survivors } = raidScreenPropsData.resTypes;
 
   const [screen, setScreen] = useState(start);
-  const [raidScreenProps, setRaidScreenProps] = useState(raidScreen);
+  const [raidScreenProps, setRaidScreenProps] = useState({
+    resType: survivors,
+  });
   const [isModalOpen, setIsModalOpen] = useState(true);
 
   const isDropdownActive = isModalOpen;
 
   function handleSetScreen(screenName, props) {
-    if (screenName === resources) {
-      setScreen(resources);
-      setRaidScreenProps(props);
-    }
+    if (screenName === resources) setRaidScreenProps(props);
+    setScreen(screenName);
   }
 
   const dropdown = {
@@ -58,18 +55,11 @@ export default function Game() {
   return (
     <div className="game-container">
       <Header />
-<<<<<<< HEAD
-      <GameScreen active={screen} setScreen={setScreen} />
-      <Button onClick={() => setScreen('start')}>start screen</Button>
-      <Button onClick={() => setScreen('resources')}>resources screen</Button>
-      <Button onClick={() => setScreen('search')}>search screen</Button>
-      <Button onClick={() => setScreen('equipment')}>equipment screen</Button>
-    </>
-=======
       <div className="gameScreen">
-        {screen === "resources" && <RaidScreen {...raidScreenProps} />}
-        {screen === "start" && <MainScreen handleSetScreen={handleSetScreen} />}
-        {screen === "search" && <SearchScreen />}
+        {screen === resources && <RaidScreen {...raidScreenProps} />}
+        {screen === start && <MainScreen handleSetScreen={handleSetScreen} />}
+        {screen === search && <SearchScreen />}
+        {screen === equipment && <EquipmentScreen />}
       </div>
       {isDropdownActive && (
         <Dropdown {...dropdown}>
@@ -79,6 +69,5 @@ export default function Game() {
         </Dropdown>
       )}
     </div>
->>>>>>> main
   );
 }
