@@ -1,12 +1,3 @@
-/* <!-- Для модального окна, где выбираются уровни сложности -->
-
-<div class="modal_level">
-  <div class="button offset_left level-item">доска</div>
-  <div class="button offset_right level-item">камень</div>
-  <div class="button offset_left level-item">пластик</div>
-  <div class="button offset_right level-item">стекло</div>
-</div> */
-
 .raid-screen {
   position: relative; /* Для позиционирования кнопок выбора сложности */
   display: flex;
