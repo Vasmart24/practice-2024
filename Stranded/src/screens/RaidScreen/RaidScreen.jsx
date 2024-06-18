@@ -10,14 +10,14 @@ import { useState } from "react";
 export default function RaidScreen({ resType }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  console.log(resType);
-
   const modal = {
     open: isModalOpen,
     footer: null,
     onCancel: () => setIsModalOpen(false),
   };
 
+  const StartButtonClass = `elementary-button`;
+  console.log(StartButtonClass);
   return (
     <div className="raid-screen">
       <MediumResButton
@@ -30,7 +30,6 @@ export default function RaidScreen({ resType }) {
       ></HardResButton>
       <StartResButton
         resType={resType}
-        className={"some"}
         onClick={() => setIsModalOpen(true)}
       ></StartResButton>
       <EasyResButton
