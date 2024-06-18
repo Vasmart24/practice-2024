@@ -4,4 +4,5 @@ export default {
   resources: "resources",
   search: "search",
   equipment: "equipment",
+  battle: "battle",
 };

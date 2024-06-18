@@ -1,0 +1,18 @@
+.friendlySide {
+    display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100vw;
+  height: 44vh; 
+  padding-top: 3rem;
+  padding-bottom: 0.5rem;
+  background-color:rgba(215, 231, 250, 0.665)
+}
+.friendly_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 0.3fr);
+  /* align-items: stretch; */
+  gap: 1rem;
+  /* padding-right: 2em; */
+}

@@ -29,7 +29,7 @@ export default function EquipmentScreenMain() {
         <RearRightButton className="newbutton"/>
         <span className="screen_item-span">ТЫЛ</span>
         <div></div>
-        <MainHeroButton className="newbutton"/>
+        <MainHeroButton className="newbutton" text="Главный герой"/>
         <div></div>
         <div className="screen_item-span">ГЛАВНОКОМАНДУЮЩИЙ</div>
       </div>

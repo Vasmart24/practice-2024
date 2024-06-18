@@ -1,0 +1,11 @@
+.battleScreen {
+  width: 100vw;
+  height: 100vh;
+}
+
+.footer {
+  width: 100vw;
+  height: 12vh;
+  border: 1px dotted #000;
+  background-color:aqua;
+}

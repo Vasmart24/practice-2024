@@ -9,16 +9,17 @@ import MainScreen from "./screens/MainScreen/MainScreen.jsx";
 import SearchScreen from "./screens/SearchResourcesScreen/SearchScreen.jsx";
 import raidScreenPropsData from "./Data/screenData/raidScreenPropsData.js";
 import EquipmentScreen from "./screens/EqiupmentScreen/EquipmentScreen.jsx";
+import BattleScreen from "./screens/BattleScreen/BattleScreen.jsx";
 
 export default function Game() {
-  const { start, resources, search, equipment } = screenStates;
+  const { start, resources, search, equipment, battle } = screenStates;
   const { survivors, building, weapon, supplies } =
     raidScreenPropsData.resTypes;
   const raidScreen = {
     resType: survivors,
   };
 
-  const [screen, setScreen] = useState(start);
+  const [screen, setScreen] = useState(battle);
   const [raidScreenProps, setRaidScreenProps] = useState({
     resType: survivors,
   });
@@ -58,7 +59,7 @@ export default function Game() {
 
   return (
     <div className="game-container">
-      {screen !== equipment && <Header />}
+      {(screen !== equipment) || (screen !== battle) && <Header />}
       <div className="gameScreen">
         {screen === resources && (
           <RaidScreen {...raidScreenProps} handleSetScreen={handleSetScreen} />
@@ -68,6 +69,7 @@ export default function Game() {
         {screen === equipment && (
           <EquipmentScreen handleSetScreen={handleSetScreen} />
         )}
+        {screen === battle && <BattleScreen/>}
       </div>
       {isDropdownActive && (
         <Dropdown {...dropdown}>
