@@ -12,7 +12,7 @@ import EquipmentScreen from "./screens/EqiupmentScreen/EquipmentScreen.jsx";
 
 export default function Game() {
   const { start, resources, search, equipment } = screenStates;
-  const { survivors, building, weapon, supplies } =
+  const { survivors, materials, weapons, supplies } =
     raidScreenPropsData.resTypes;
   const raidScreen = {
     resType: survivors,

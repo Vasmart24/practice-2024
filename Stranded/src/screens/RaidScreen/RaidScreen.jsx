@@ -33,27 +33,27 @@ export default function RaidScreen({ resType, handleSetScreen }) {
     onCancel: () => setIsModalOpen(false),
   };
 
-  const StartButtonClass = `elementary-button`;
-  console.log(StartButtonClass);
   return (
     <Dropdown {...dropdown}>
       <div className="raid-screen">
         <MediumResButton
           resType={resType}
           onClick={() => setIsModalOpen(true)}
+          disabled={true}
         ></MediumResButton>
         <HardResButton
           resType={resType}
           onClick={() => setIsModalOpen(true)}
+          disabled={true}
         ></HardResButton>
         <StartResButton
           resType={resType}
-          className={"some"}
           onClick={() => setIsModalOpen(true)}
         ></StartResButton>
         <EasyResButton
           resType={resType}
           onClick={() => setIsModalOpen(true)}
+          disabled={true}
         ></EasyResButton>
         <Modal {...modal}>
           <SearchScreen />
