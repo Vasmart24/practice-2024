@@ -12,7 +12,11 @@ import EquipmentScreen from "./screens/EqiupmentScreen/EquipmentScreen.jsx";
 
 export default function Game() {
   const { start, resources, search, equipment } = screenStates;
-  const { survivors } = raidScreenPropsData.resTypes;
+  const { survivors, building, weapon, supplies } =
+    raidScreenPropsData.resTypes;
+  const raidScreen = {
+    resType: survivors,
+  };
 
   const [screen, setScreen] = useState(start);
   const [raidScreenProps, setRaidScreenProps] = useState({
@@ -54,7 +58,7 @@ export default function Game() {
 
   return (
     <div className="game-container">
-      <Header />
+      {screen !== equipment && <Header />}
       <div className="gameScreen">
         {screen === resources && <RaidScreen {...raidScreenProps} />}
         {screen === start && <MainScreen handleSetScreen={handleSetScreen} />}
