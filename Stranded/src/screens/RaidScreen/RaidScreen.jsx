@@ -4,11 +4,28 @@ import EasyResButton from "../../components/Button/raidScreenButtons/EasyResButt
 import MediumResButton from "../../components/Button/raidScreenButtons/MediumResButton";
 import HardResButton from "../../components/Button/raidScreenButtons/HardResButton";
 import SearchScreen from "../SearchResourcesScreen/SearchScreen";
-import { Modal } from "antd";
+import { Dropdown, Modal } from "antd";
 import { useState } from "react";
+import screenStates from "../../Data/screenData/screenStates";
 
-export default function RaidScreen({ resType }) {
+export default function RaidScreen({ resType, handleSetScreen }) {
+  const { start } = screenStates;
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const dropdown = {
+    menu: {
+      items: [
+        {
+          label: "Назад",
+          key: "0",
+        },
+      ],
+      onClick: () => {
+        handleSetScreen(start);
+      },
+    },
+    trigger: ["contextMenu"],
+  };
 
   const modal = {
     open: isModalOpen,
@@ -19,27 +36,29 @@ export default function RaidScreen({ resType }) {
   const StartButtonClass = `elementary-button`;
   console.log(StartButtonClass);
   return (
-    <div className="raid-screen">
-      <MediumResButton
-        resType={resType}
-        onClick={() => setIsModalOpen(true)}
-      ></MediumResButton>
-      <HardResButton
-        resType={resType}
-        onClick={() => setIsModalOpen(true)}
-      ></HardResButton>
-      <StartResButton
-        resType={resType}
-        onClick={() => setIsModalOpen(true)}
-      ></StartResButton>
-      <EasyResButton
-        resType={resType}
-        onClick={() => setIsModalOpen(true)}
-      ></EasyResButton>
-
-      <Modal {...modal}>
-        <SearchScreen />
-      </Modal>
-    </div>
+    <Dropdown {...dropdown}>
+      <div className="raid-screen">
+        <MediumResButton
+          resType={resType}
+          onClick={() => setIsModalOpen(true)}
+        ></MediumResButton>
+        <HardResButton
+          resType={resType}
+          onClick={() => setIsModalOpen(true)}
+        ></HardResButton>
+        <StartResButton
+          resType={resType}
+          className={"some"}
+          onClick={() => setIsModalOpen(true)}
+        ></StartResButton>
+        <EasyResButton
+          resType={resType}
+          onClick={() => setIsModalOpen(true)}
+        ></EasyResButton>
+        <Modal {...modal}>
+          <SearchScreen />
+        </Modal>
+      </div>
+    </Dropdown>
   );
 }

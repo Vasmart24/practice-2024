@@ -8,9 +8,10 @@ import RaidScreen from "./screens/RaidScreen/RaidScreen.jsx";
 import MainScreen from "./screens/MainScreen/MainScreen.jsx";
 import SearchScreen from "./screens/SearchResourcesScreen/SearchScreen.jsx";
 import raidScreenPropsData from "./Data/screenData/raidScreenPropsData.js";
+import EquipmentScreen from "./screens/EqiupmentScreen/EquipmentScreen.jsx";
 
 export default function Game() {
-  const { start, resources, search } = screenStates;
+  const { start, resources, search, equipment } = screenStates;
   const { survivors, building, weapon, supplies } =
     raidScreenPropsData.resTypes;
   const raidScreen = {
@@ -18,16 +19,16 @@ export default function Game() {
   };
 
   const [screen, setScreen] = useState(start);
-  const [raidScreenProps, setRaidScreenProps] = useState(raidScreen);
+  const [raidScreenProps, setRaidScreenProps] = useState({
+    resType: survivors,
+  });
   const [isModalOpen, setIsModalOpen] = useState(true);
 
   const isDropdownActive = isModalOpen;
 
   function handleSetScreen(screenName, props) {
-    if (screenName === resources) {
-      setScreen(resources);
-      setRaidScreenProps(props);
-    }
+    if (screenName === resources) setRaidScreenProps(props);
+    setScreen(screenName);
   }
 
   const dropdown = {
@@ -57,11 +58,16 @@ export default function Game() {
 
   return (
     <div className="game-container">
-      <Header />
+      {screen !== equipment && <Header />}
       <div className="gameScreen">
-        {screen === "resources" && <RaidScreen {...raidScreenProps} />}
-        {screen === "start" && <MainScreen handleSetScreen={handleSetScreen} />}
-        {screen === "search" && <SearchScreen />}
+        {screen === resources && (
+          <RaidScreen {...raidScreenProps} handleSetScreen={handleSetScreen} />
+        )}
+        {screen === start && <MainScreen handleSetScreen={handleSetScreen} />}
+        {screen === search && <SearchScreen />}
+        {screen === equipment && (
+          <EquipmentScreen handleSetScreen={handleSetScreen} />
+        )}
       </div>
       {isDropdownActive && (
         <Dropdown {...dropdown}>

@@ -1,6 +1,7 @@
 export default basePointsData = [
   {
-    Atk: 0,
-    Def: 0,
+    atk: 0,
+    def: 0,
+    hp: 100,
   }
 ];
