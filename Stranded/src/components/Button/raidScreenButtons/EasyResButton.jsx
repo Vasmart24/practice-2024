@@ -2,7 +2,6 @@ import Button from "../Button.jsx";
 import "../Button.css";
 
 function EasyResButton({ onClick, resType }) {
-  console.log(resType);
   return (
     <Button onClick={onClick}>
       <div>Лёгкий уровень</div>

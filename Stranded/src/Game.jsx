@@ -60,10 +60,14 @@ export default function Game() {
     <div className="game-container">
       {screen !== equipment && <Header />}
       <div className="gameScreen">
-        {screen === resources && <RaidScreen {...raidScreenProps} />}
+        {screen === resources && (
+          <RaidScreen {...raidScreenProps} handleSetScreen={handleSetScreen} />
+        )}
         {screen === start && <MainScreen handleSetScreen={handleSetScreen} />}
         {screen === search && <SearchScreen />}
-        {screen === equipment && <EquipmentScreen />}
+        {screen === equipment && (
+          <EquipmentScreen handleSetScreen={handleSetScreen} />
+        )}
       </div>
       {isDropdownActive && (
         <Dropdown {...dropdown}>
@@ -74,4 +78,4 @@ export default function Game() {
       )}
     </div>
   );
-};
+}
