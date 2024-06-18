@@ -1,3 +1,4 @@
 .weapon_list {
-  
+  display: flex;
+  flex-direction: column;
 }

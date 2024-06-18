@@ -8,16 +8,17 @@ import RaidScreen from "./screens/RaidScreen/RaidScreen.jsx";
 import MainScreen from "./screens/MainScreen/MainScreen.jsx";
 import SearchScreen from "./screens/SearchResourcesScreen/SearchScreen.jsx";
 import raidScreenPropsData from "./Data/screenData/raidScreenPropsData.js";
+import Equipment from "./screens/EqiupmentScreen/EquipmentScreen.jsx"
 
 export default function Game() {
-  const { start, resources, search } = screenStates;
+  const { start, resources, search, equipment } = screenStates;
   const { survivors, building, weapon, supplies } =
     raidScreenPropsData.resTypes;
   const raidScreen = {
     resType: survivors,
   };
 
-  const [screen, setScreen] = useState(start);
+  const [screen, setScreen] = useState(equipment);
   const [raidScreenProps, setRaidScreenProps] = useState(raidScreen);
   const [isModalOpen, setIsModalOpen] = useState(true);
 
@@ -57,19 +58,12 @@ export default function Game() {
 
   return (
     <div className="game-container">
-      <Header />
-<<<<<<< HEAD
-      <GameScreen active={screen} setScreen={setScreen} />
-      <Button onClick={() => setScreen('start')}>start screen</Button>
-      <Button onClick={() => setScreen('resources')}>resources screen</Button>
-      <Button onClick={() => setScreen('search')}>search screen</Button>
-      <Button onClick={() => setScreen('equipment')}>equipment screen</Button>
-    </>
-=======
+      {screen !== "equipment" && <Header />}
       <div className="gameScreen">
         {screen === "resources" && <RaidScreen {...raidScreenProps} />}
         {screen === "start" && <MainScreen handleSetScreen={handleSetScreen} />}
         {screen === "search" && <SearchScreen />}
+        {screen === "equipment" && <Equipment/>}
       </div>
       {isDropdownActive && (
         <Dropdown {...dropdown}>
@@ -79,6 +73,5 @@ export default function Game() {
         </Dropdown>
       )}
     </div>
->>>>>>> main
   );
 }

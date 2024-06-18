@@ -3,4 +3,5 @@ export default {
   start: "start",
   resources: "resources",
   search: "search",
+  equipment: "equipment",
 };
