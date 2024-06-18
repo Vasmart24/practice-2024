@@ -12,4 +12,9 @@
   /* border: 1px solid; */
   align-items: flex-start;
   flex-direction: column;
+
+  background-image: url('../../assets/main-backgrounds/MainScreen-BG.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
