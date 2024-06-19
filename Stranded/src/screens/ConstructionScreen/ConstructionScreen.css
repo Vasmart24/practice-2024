@@ -1,1 +1,39 @@
 /* some styles */
+.construction-screen {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 90vh;
+}
+
+.big-buildings {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10vh;
+    width: 360px;
+    height: 600px;
+}
+
+.big-buildings button {
+    padding: 128px;
+    margin: 10px;
+}
+
+.buildings {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10vh;
+    width: 800px;
+    height: 600px;
+}
+
+.farm-button {
+    padding: 50px;
+    margin: 10px;
+    background-color: hsla(0, 0%, 24%, 0.8);
+    border: 2px solid #3e3e3e;
+    background-image: url(../../assets/buildings/farm.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
