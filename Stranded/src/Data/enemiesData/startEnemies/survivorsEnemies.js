@@ -1,11 +1,11 @@
 import EnemyUnit from "../enemyClass";
 
-const rat = new EnemyUnit(
-  'Крыса', // name
-  10, // hp
-  1, // atk
-  EnemyUnit.setDef(0, 5), // def
-  EnemyUnit.setDmg(1, 1), // dmg
+const dog = new EnemyUnit(
+  'Бешеный пёс', // name
+  8, // hp
+  3, // atk
+  EnemyUnit.setDef(0, 0), // def
+  EnemyUnit.setDmg(1, 2), // dmg
   '', // стиль для вставки картинки мыши + стиль самой кнопки
   9, // initiative
 );

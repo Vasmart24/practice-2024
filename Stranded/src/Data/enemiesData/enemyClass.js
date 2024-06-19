@@ -10,14 +10,17 @@ export default class EnemyUnit {
     def = {pure: 0, percent: 0},
     dmg = {min: 1, max: 1},
     picture = '',
+    initiative = 1,
+    count = 1,
   ) 
     {
-   
     this.name = name;
     this.hp = hp;
     this.atk = atk;
     this.def = def;
     this.dmg = dmg;
     this.picture = picture;
+    this.initiative = initiative;
+    this.count = count;
   }
 }
