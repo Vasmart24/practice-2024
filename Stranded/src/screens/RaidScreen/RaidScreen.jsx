@@ -104,7 +104,7 @@ export default function RaidScreen({
               <div>
                 <button
                   onClick={() => {
-                    handleSuppliesAddition(loot / 2);
+                    handleSuppliesAddition(Math.floor(loot / 2));
                     handleSetScreen(start);
                   }}
                 >

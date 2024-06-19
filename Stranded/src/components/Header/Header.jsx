@@ -7,8 +7,12 @@ function Header({ supplies }) {
     menu: {
       items: [
         {
-          label: `Припасы: ${supplies}`,
+          label: `Прирост в день: 0`,
           key: "0",
+        },
+        {
+          label: `Трата в день: 0`,
+          key: "1",
         },
       ],
       selectable: false,
@@ -37,7 +41,7 @@ function Header({ supplies }) {
       </div>
       <Dropdown {...dropdownSupplies}>
         <div className="header__item">
-          <div>Припасы</div>
+          <div>Припасы: {supplies}</div>
         </div>
       </Dropdown>
       <Dropdown {...dropdownMaterials}>
