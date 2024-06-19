@@ -5,17 +5,15 @@ const dog = new EnemyUnit(
   8, // hp
   3, // atk
   EnemyUnit.setDef(0, 0), // def
-  EnemyUnit.setDmg(1, 2), // dmg
-  '', // стиль для вставки картинки мыши + стиль самой кнопки
-  9, // initiative
+  EnemyUnit.setDmg(0, 2), // dmg
+  12, // initiative | count and picture are default
 );
 
 const boss = new EnemyUnit(
-  'Гигантская Крыса', // name
-  35, // hp
-  5, // atk
-  EnemyUnit.setDef(5, 10),
-  EnemyUnit.setDmg(4, 6),
-  '', // стиль для вставки картинки мега мыши + стиль самой кнопки
-  7, // initiative
+  'Заражённый пёс', // name
+  25, // hp
+  8, // atk
+  EnemyUnit.setDef(3, 8),
+  EnemyUnit.setDmg(2, 8),
+  14, // initiative | count and picture are default
 );
