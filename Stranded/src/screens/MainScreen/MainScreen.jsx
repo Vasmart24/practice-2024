@@ -6,7 +6,7 @@ import raidScreenPropsData from "../../Data/screenData/raidScreenPropsData";
 // import MainHeader from "../../components/MainHeader/MainHeader";
 
 export default function MainScreen({ handleSetScreen }) {
-  const { resources, equipment } = screenStates;
+  const { resources, equipment, construction } = screenStates;
 
   const dropdown = {
     menu: {
@@ -52,7 +52,9 @@ export default function MainScreen({ handleSetScreen }) {
       ],
       onClick: ({ key, keyPath }) => {
         const parentOptionKey = keyPath[1];
-        if (parentOptionKey === "2") {
+        if (key === "1") {
+          handleSetScreen(construction);
+        } else if (parentOptionKey === "2") {
           if (key === "6")
             handleSetScreen(resources, {
               resType: raidScreenPropsData.resTypes.survivors,
