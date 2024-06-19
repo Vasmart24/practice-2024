@@ -14,20 +14,20 @@ export default function FrendlySide() {
     return (
       <div className="friendlySide">
         <div className="friendly_grid">
-          <AvangardLeftButton className="newbutton"/>
-          <AvangardCenterButton className="newbutton"/>
-          <AvangardRightButton className="newbutton"/>
+          <AvangardLeftButton className="battle_screen-button"/>
+          <AvangardCenterButton className="battle_screen-button"/>
+          <AvangardRightButton className="battle_screen-button"/>
           <span className="screen_item-span">АВАНГАРД</span>
-          <FlankLeftButton className="newbutton"/>
-          <FlankCenterButton className="newbutton"/>
-          <FlankRightButton className="newbutton"/>
+          <FlankLeftButton className="battle_screen-button"/>
+          <FlankCenterButton className="battle_screen-button"/>
+          <FlankRightButton className="battle_screen-button"/>
           <span className="screen_item-span">ФЛАНГ</span>
-          <RearLeftButton className="newbutton"/>
-          <RearCenterButton className="newbutton"/>
-          <RearRightButton className="newbutton"/>
+          <RearLeftButton className="battle_screen-button"/>
+          <RearCenterButton className="battle_screen-button"/>
+          <RearRightButton className="battle_screen-button"/>
           <span className="screen_item-span">ТЫЛ</span>
           <div></div>
-          <MainHeroButton className="newbutton" text="Главный герой"/>
+          <MainHeroButton className="battle_screen-button" text="Главный герой"/>
           <div></div>
           <div className="screen_item-span">ГЛАВНОКОМАНДУЮЩИЙ</div>
         </div>

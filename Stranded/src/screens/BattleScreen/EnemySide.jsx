@@ -15,20 +15,20 @@ export default function EnemySide() {
       <div className="enemySide">
         <div className="enemy_grid">
           <div></div>
-          <MainHeroButton className="newbutton" text="Главный Босс"/>
+          <MainHeroButton className="battle_screen-button" text="Главный Босс"/>
           <div></div>
           <div className="screen_item-span">ГЛАВНОКОМАНДУЮЩИЙ</div>
-          <RearRightButton className="newbutton"/>
-          <RearCenterButton className="newbutton"/>
-          <RearLeftButton className="newbutton"/>
+          <RearRightButton className="battle_screen-button"/>
+          <RearCenterButton className="battle_screen-button"/>
+          <RearLeftButton className="battle_screen-button"/>
           <span className="screen_item-span">ТЫЛ</span>
-          <FlankRightButton className="newbutton"/>
-          <FlankCenterButton className="newbutton"/>
-          <FlankLeftButton className="newbutton"/>
+          <FlankRightButton className="battle_screen-button"/>
+          <FlankCenterButton className="battle_screen-button"/>
+          <FlankLeftButton className="battle_screen-button"/>
           <span className="screen_item-span">ФЛАНГ</span>
-          <AvangardRightButton className="newbutton"/>
-          <AvangardCenterButton className="newbutton"/>
-          <AvangardLeftButton className="newbutton"/>
+          <AvangardRightButton className="battle_screen-button"/>
+          <AvangardCenterButton className="battle_screen-button"/>
+          <AvangardLeftButton className="battle_screen-button"/>
           <span className="screen_item-span">АВАНГАРД</span>
         </div>
       </div>
