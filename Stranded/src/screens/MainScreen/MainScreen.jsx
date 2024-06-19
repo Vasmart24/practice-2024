@@ -1,12 +1,12 @@
 import "./MainScreen.css";
 import { Dropdown } from "antd";
-import screenStates from "../../Data/screenData/screenStates";
+import { screenStates } from "../../Data/reusableStatesStrings";
 import raidScreenPropsData from "../../Data/screenData/raidScreenPropsData";
 // import MainScreenFooter from "../../components/MainScreenFooter/MainScreenFooter";
 // import MainHeader from "../../components/MainHeader/MainHeader";
 
 export default function MainScreen({ handleSetScreen }) {
-  const { resources } = screenStates;
+  const { resources, equipment } = screenStates;
 
   const dropdown = {
     menu: {
@@ -59,16 +59,18 @@ export default function MainScreen({ handleSetScreen }) {
             });
           if (key === "7")
             handleSetScreen(resources, {
-              resType: raidScreenPropsData.resTypes.building,
+              resType: raidScreenPropsData.resTypes.materials,
             });
           if (key === "8")
             handleSetScreen(resources, {
-              resType: raidScreenPropsData.resTypes.weapon,
+              resType: raidScreenPropsData.resTypes.weapons,
             });
           if (key === "9")
             handleSetScreen(resources, {
               resType: raidScreenPropsData.resTypes.supplies,
             });
+        } else if (key === "3") {
+          handleSetScreen(equipment);
         }
       },
     },

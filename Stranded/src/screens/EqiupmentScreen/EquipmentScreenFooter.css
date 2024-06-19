@@ -1,0 +1,5 @@
+.battleScreen_footer {
+  display: flex;
+  justify-content: right;
+  padding-top: 4em;
+}

@@ -3,14 +3,35 @@ import StartResButton from "../../components/Button/raidScreenButtons/StartResBu
 import EasyResButton from "../../components/Button/raidScreenButtons/EasyResButton";
 import MediumResButton from "../../components/Button/raidScreenButtons/MediumResButton";
 import HardResButton from "../../components/Button/raidScreenButtons/HardResButton";
-import SearchScreen from "../SearchResourcesScreen/SearchScreen";
-import { Modal } from "antd";
+import RaidModal from "../SearchResourcesScreen/RaidModal.jsx";
+import { Dropdown, Modal } from "antd";
 import { useState } from "react";
+import {
+  screenStates,
+  raidModalStates,
+} from "../../Data/reusableStatesStrings";
 
-export default function RaidScreen({ resType }) {
+export default function RaidScreen({ resType, handleSetScreen }) {
+  const { search, begin } = raidModalStates;
+  const { start } = screenStates;
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeModalContent, setActiveModalContent] = useState(search);
+  const [resLevel, setResLevel] = useState();
 
-  console.log(resType);
+  const dropdown = {
+    menu: {
+      items: [
+        {
+          label: "Назад",
+          key: "0",
+        },
+      ],
+      onClick: () => {
+        handleSetScreen(start);
+      },
+    },
+    trigger: ["contextMenu"],
+  };
 
   const modal = {
     open: isModalOpen,
@@ -19,28 +40,56 @@ export default function RaidScreen({ resType }) {
   };
 
   return (
-    <div className="raid-screen">
-      <MediumResButton
-        resType={resType}
-        onClick={() => setIsModalOpen(true)}
-      ></MediumResButton>
-      <HardResButton
-        resType={resType}
-        onClick={() => setIsModalOpen(true)}
-      ></HardResButton>
-      <StartResButton
-        resType={resType}
-        className={"some"}
-        onClick={() => setIsModalOpen(true)}
-      ></StartResButton>
-      <EasyResButton
-        resType={resType}
-        onClick={() => setIsModalOpen(true)}
-      ></EasyResButton>
-
-      <Modal {...modal}>
-        <SearchScreen />
-      </Modal>
-    </div>
+    <Dropdown {...dropdown}>
+      <div className="raid-screen">
+        <MediumResButton
+          resType={resType}
+          onClick={() => {
+            setResLevel("medium");
+            setIsModalOpen(true);
+          }}
+          disabled={true}
+        ></MediumResButton>
+        <HardResButton
+          resType={resType}
+          onClick={() => {
+            setResLevel("hard");
+            setIsModalOpen(true);
+          }}
+          disabled={true}
+        ></HardResButton>
+        <StartResButton
+          resType={resType}
+          onClick={() => {
+            setResLevel("start");
+            setIsModalOpen(true);
+          }}
+        ></StartResButton>
+        <EasyResButton
+          resType={resType}
+          onClick={() => {
+            setResLevel("easy");
+            setIsModalOpen(true);
+          }}
+          disabled={true}
+        ></EasyResButton>
+        <Modal {...modal}>
+          {activeModalContent === search && (
+            <RaidModal
+              resLevel={resLevel}
+              resType={resType}
+              setActiveModalContent={setActiveModalContent}
+            />
+          )}
+          {activeModalContent === begin && (
+            <div>
+              ИнформацияИнформацияИнформация
+              <button>Сбежать</button>
+              <button>Сразиться</button>
+            </div>
+          )}
+        </Modal>
+      </div>
+    </Dropdown>
   );
 }

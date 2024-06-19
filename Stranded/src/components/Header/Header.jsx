@@ -1,7 +1,24 @@
-import { baseResources } from "../../Data/headerData/materialsData";
 import "./Header.css";
+import materialsData from "../../Data/headerData/materialsData";
+import { Dropdown } from "antd";
 
-function Header() {
+function Header({ headerProps }) {
+  const dropdown = {
+    menu: {
+      items: materialsData.map(({ key, name, count }) => ({
+        label: `${name}: ${count}`,
+        key,
+      })),
+      selectable: false,
+      // onClick: ({ key }) => {
+      //   if (key === "0") {
+      //     setIsModalOpen(false);
+      //   }
+      // },
+    },
+    trigger: ["hover"],
+  };
+
   return (
     <header className="header">
       <div className="header__item">
@@ -10,9 +27,11 @@ function Header() {
           <div>Дней до смерти от голода: 0</div>
         </div>
       </div>
-      <div className="header__item">
-        <div>Ресурсы</div>
-      </div>
+      <Dropdown {...dropdown}>
+        <div className="header__item">
+          <div>Ресурсы</div>
+        </div>
+      </Dropdown>
       <div className="header__item">
         <div>Жители</div>
       </div>
