@@ -8,6 +8,8 @@ import MainScreen from "./screens/MainScreen/MainScreen.jsx";
 import raidScreenPropsData from "./Data/screenData/raidScreenPropsData.js";
 import EquipmentScreen from "./screens/EqiupmentScreen/EquipmentScreen.jsx";
 import ConstructionScreen from "./screens/ConstructionScreen/ConstructionScreen.jsx";
+import suppliesData from "./Data/headerData/suppliesData.js";
+import clock from "./Data/headerData/clockData.js";
 
 export default function Game() {
   const { start, resources, search, equipment, construction } = screenStates;
@@ -18,6 +20,10 @@ export default function Game() {
   const [raidScreenProps, setRaidScreenProps] = useState({
     resType: survivors,
   });
+  const [headerProps, setHeaderProps] = useState({
+    supplies: suppliesData.foodCount,
+    minutes: clock.minutes,
+  });
   const [isModalOpen, setIsModalOpen] = useState(true);
 
   const isDropdownActive = isModalOpen;
@@ -25,6 +31,22 @@ export default function Game() {
   function handleSetScreen(screenName, props) {
     if (screenName === resources) setRaidScreenProps(props);
     setScreen(screenName);
+  }
+
+  function handleTimeAddition(minutesToAdd) {
+    const newTimeInMinutes = headerProps.minutes + Number(minutesToAdd);
+    setHeaderProps({
+      ...headerProps,
+      minutes: newTimeInMinutes,
+    });
+  }
+
+  function handleSuppliesAddition(newSupplies) {
+    const curSupplies = headerProps.supplies;
+    setHeaderProps({
+      ...headerProps,
+      supplies: curSupplies + newSupplies,
+    });
   }
 
   const dropdown = {
@@ -54,10 +76,15 @@ export default function Game() {
 
   return (
     <div className="game-container">
-      {screen !== equipment && <Header />}
+      {screen !== equipment && <Header {...headerProps} />}
       <div className="gameScreen">
         {screen === resources && (
-          <RaidScreen {...raidScreenProps} handleSetScreen={handleSetScreen} />
+          <RaidScreen
+            {...raidScreenProps}
+            handleSetScreen={handleSetScreen}
+            handleSuppliesAddition={handleSuppliesAddition}
+            handleTimeAddition={handleTimeAddition}
+          />
         )}
         {screen === start && <MainScreen handleSetScreen={handleSetScreen} />}
         {screen === equipment && (

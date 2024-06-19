@@ -11,12 +11,23 @@ import {
   raidModalStates,
 } from "../../Data/reusableStatesStrings";
 
-export default function RaidScreen({ resType, handleSetScreen }) {
+export default function RaidScreen({
+  resType,
+  handleSetScreen,
+  handleSuppliesAddition,
+  handleTimeAddition,
+}) {
   const { search, begin } = raidModalStates;
   const { start } = screenStates;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeModalContent, setActiveModalContent] = useState(search);
   const [resLevel, setResLevel] = useState();
+  const [lootRange, setLootRange] = useState([]);
+  const [timeRequired, setTimeRequired] = useState(0);
+
+  const max = lootRange[1] + 1;
+  const min = lootRange[0];
+  const loot = Math.floor(Math.random() * (max - min) + min);
 
   const dropdown = {
     menu: {
@@ -79,13 +90,32 @@ export default function RaidScreen({ resType, handleSetScreen }) {
               resLevel={resLevel}
               resType={resType}
               setActiveModalContent={setActiveModalContent}
+              setLootRange={setLootRange}
+              setTimeRequired={setTimeRequired}
             />
           )}
           {activeModalContent === begin && (
             <div>
-              ИнформацияИнформацияИнформация
-              <button>Сбежать</button>
-              <button>Сразиться</button>
+              <p>
+                На вас напали! Вы получите {loot}
+                <br />
+                <span style={{ color: "red" }}>
+                  При побеге полученный ресурс уменьшится вдвое!
+                </span>
+              </p>
+
+              <div>
+                <button
+                  onClick={() => {
+                    handleSuppliesAddition(Math.floor(loot / 2));
+                    handleTimeAddition(timeRequired);
+                    handleSetScreen(start);
+                  }}
+                >
+                  Сбежать
+                </button>
+                <button>Сразиться</button>
+              </div>
             </div>
           )}
         </Modal>
