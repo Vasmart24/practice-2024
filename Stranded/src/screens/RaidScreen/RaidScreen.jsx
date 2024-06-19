@@ -3,7 +3,7 @@ import StartResButton from "../../components/Button/raidScreenButtons/StartResBu
 import EasyResButton from "../../components/Button/raidScreenButtons/EasyResButton";
 import MediumResButton from "../../components/Button/raidScreenButtons/MediumResButton";
 import HardResButton from "../../components/Button/raidScreenButtons/HardResButton";
-import SearchScreen from "../SearchResourcesScreen/SearchScreen";
+import RaidModal from "../SearchResourcesScreen/RaidModal.jsx";
 import { Dropdown, Modal } from "antd";
 import { useState } from "react";
 import {
@@ -16,6 +16,7 @@ export default function RaidScreen({ resType, handleSetScreen }) {
   const { start } = screenStates;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeModalContent, setActiveModalContent] = useState(search);
+  const [resLevel, setResLevel] = useState();
 
   const dropdown = {
     menu: {
@@ -43,26 +44,42 @@ export default function RaidScreen({ resType, handleSetScreen }) {
       <div className="raid-screen">
         <MediumResButton
           resType={resType}
-          onClick={() => setIsModalOpen(true)}
+          onClick={() => {
+            setResLevel("medium");
+            setIsModalOpen(true);
+          }}
           disabled={true}
         ></MediumResButton>
         <HardResButton
           resType={resType}
-          onClick={() => setIsModalOpen(true)}
+          onClick={() => {
+            setResLevel("hard");
+            setIsModalOpen(true);
+          }}
           disabled={true}
         ></HardResButton>
         <StartResButton
           resType={resType}
-          onClick={() => setIsModalOpen(true)}
+          onClick={() => {
+            setResLevel("start");
+            setIsModalOpen(true);
+          }}
         ></StartResButton>
         <EasyResButton
           resType={resType}
-          onClick={() => setIsModalOpen(true)}
+          onClick={() => {
+            setResLevel("easy");
+            setIsModalOpen(true);
+          }}
           disabled={true}
         ></EasyResButton>
         <Modal {...modal}>
           {activeModalContent === search && (
-            <SearchScreen setActiveModalContent={setActiveModalContent} />
+            <RaidModal
+              resLevel={resLevel}
+              resType={resType}
+              setActiveModalContent={setActiveModalContent}
+            />
           )}
           {activeModalContent === begin && (
             <div>

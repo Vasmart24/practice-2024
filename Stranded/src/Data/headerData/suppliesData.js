@@ -1,4 +1,4 @@
-export default suppliesData = {
+const suppliesData = {
   start: {
     min: 1,
     max: 2,
@@ -21,3 +21,5 @@ export default suppliesData = {
 
   foodCount: 0,
 };
+
+export default suppliesData;
