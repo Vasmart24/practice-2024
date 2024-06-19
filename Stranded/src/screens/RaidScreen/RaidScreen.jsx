@@ -6,11 +6,16 @@ import HardResButton from "../../components/Button/raidScreenButtons/HardResButt
 import SearchScreen from "../SearchResourcesScreen/SearchScreen";
 import { Dropdown, Modal } from "antd";
 import { useState } from "react";
-import screenStates from "../../Data/screenData/screenStates";
+import {
+  screenStates,
+  raidModalStates,
+} from "../../Data/reusableStatesStrings";
 
 export default function RaidScreen({ resType, handleSetScreen }) {
+  const { search, begin } = raidModalStates;
   const { start } = screenStates;
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeModalContent, setActiveModalContent] = useState(search);
 
   const dropdown = {
     menu: {
@@ -55,7 +60,16 @@ export default function RaidScreen({ resType, handleSetScreen }) {
         ></EasyResButton>
 
         <Modal {...modal}>
-          <SearchScreen />
+          {activeModalContent === search && (
+            <SearchScreen setActiveModalContent={setActiveModalContent} />
+          )}
+          {activeModalContent === begin && (
+            <div>
+              ИнформацияИнформацияИнформация
+              <button>Сбежать</button>
+              <button>Сразиться</button>
+            </div>
+          )}
         </Modal>
       </div>
     </Dropdown>

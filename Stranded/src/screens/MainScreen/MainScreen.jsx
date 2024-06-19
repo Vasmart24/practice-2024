@@ -1,6 +1,6 @@
 import "./MainScreen.css";
 import { Dropdown } from "antd";
-import screenStates from "../../Data/screenData/screenStates";
+import { screenStates } from "../../Data/reusableStatesStrings";
 import raidScreenPropsData from "../../Data/screenData/raidScreenPropsData";
 // import MainScreenFooter from "../../components/MainScreenFooter/MainScreenFooter";
 // import MainHeader from "../../components/MainHeader/MainHeader";

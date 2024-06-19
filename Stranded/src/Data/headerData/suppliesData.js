@@ -20,5 +20,4 @@ export default suppliesData = {
   },
 
   foodCount: 0,
-}
-
+};

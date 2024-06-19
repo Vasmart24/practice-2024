@@ -1,14 +1,16 @@
-import { baseResources } from "../../Data/headerData/materialsData.js";
+import materialsData from "../../Data/headerData/materialsData.js";
 import Button from "../../components/Button/Button.jsx";
-import "./EquipmentScreenWeaponList.css"
+import "./EquipmentScreenWeaponList.css";
 
-function EquipmentScreenWeaponList({ className="weapon_list-item" }) {
-  return(
+function EquipmentScreenWeaponList({ className = "weapon_list-item" }) {
+  return (
     <div>
       <ul className="weapon_list">
-        {baseResources.map(({ key, name, count }) => {
+        {materialsData.map(({ key, name, count }) => {
           return (
-            <Button className={className} key={key}>{name}: {count}</Button>
+            <Button className={className} key={key}>
+              {name}: {count}
+            </Button>
           );
         })}
       </ul>
@@ -16,4 +18,4 @@ function EquipmentScreenWeaponList({ className="weapon_list-item" }) {
   );
 }
 
-export default EquipmentScreenWeaponList
+export default EquipmentScreenWeaponList;

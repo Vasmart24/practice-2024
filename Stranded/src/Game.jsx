@@ -1,8 +1,7 @@
 import { useState } from "react";
 import Header from "./components/Header/Header.jsx";
-import Button from "./components/Button/Button.jsx";
 import { Dropdown, Modal } from "antd";
-import screenStates from "./Data/screenData/screenStates.js";
+import { screenStates } from "./Data/reusableStatesStrings.js";
 import "./Game.css";
 import RaidScreen from "./screens/RaidScreen/RaidScreen.jsx";
 import MainScreen from "./screens/MainScreen/MainScreen.jsx";
@@ -12,11 +11,7 @@ import EquipmentScreen from "./screens/EqiupmentScreen/EquipmentScreen.jsx";
 
 export default function Game() {
   const { start, resources, search, equipment } = screenStates;
-  const { survivors, building, weapon, supplies } =
-    raidScreenPropsData.resTypes;
-  const raidScreen = {
-    resType: survivors,
-  };
+  const { survivors } = raidScreenPropsData.resTypes;
 
   const [screen, setScreen] = useState(start);
   const [raidScreenProps, setRaidScreenProps] = useState({
