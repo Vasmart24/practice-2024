@@ -59,11 +59,11 @@ export default function MainScreen({ handleSetScreen }) {
             });
           if (key === "7")
             handleSetScreen(resources, {
-              resType: raidScreenPropsData.resTypes.building,
+              resType: raidScreenPropsData.resTypes.materials,
             });
           if (key === "8")
             handleSetScreen(resources, {
-              resType: raidScreenPropsData.resTypes.weapon,
+              resType: raidScreenPropsData.resTypes.weapons,
             });
           if (key === "9")
             handleSetScreen(resources, {

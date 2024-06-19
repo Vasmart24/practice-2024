@@ -12,4 +12,20 @@
   /* border: 1px solid; */
   align-items: flex-start;
   flex-direction: column;
+
+  background-image: url('../../assets/main-backgrounds/MainScreen-BG.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.mainview::before {
+  content: '';
+  position: absolute; /* Обеспечиваем позиционирование псевдоэлемента */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px); /* Применяем размытие */
+  z-index: 1;
 }

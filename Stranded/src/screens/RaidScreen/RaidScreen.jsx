@@ -44,21 +44,22 @@ export default function RaidScreen({ resType, handleSetScreen }) {
         <MediumResButton
           resType={resType}
           onClick={() => setIsModalOpen(true)}
+          disabled={true}
         ></MediumResButton>
         <HardResButton
           resType={resType}
           onClick={() => setIsModalOpen(true)}
+          disabled={true}
         ></HardResButton>
         <StartResButton
           resType={resType}
-          className={"some"}
           onClick={() => setIsModalOpen(true)}
         ></StartResButton>
         <EasyResButton
           resType={resType}
           onClick={() => setIsModalOpen(true)}
+          disabled={true}
         ></EasyResButton>
-
         <Modal {...modal}>
           {activeModalContent === search && (
             <SearchScreen setActiveModalContent={setActiveModalContent} />
