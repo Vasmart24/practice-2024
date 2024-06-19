@@ -33,7 +33,10 @@ const generateWatchtowersData = (lvl = 1) => {
     lvl === 2 ? 5 :
     lvl === 3 ? 10 : 16,
 
-    currentWatchtowersCount: 0,
+    watctowersLvl1: 0,
+    watctowersLvl2: 0,
+    watctowersLvl3: 0,
+    watctowersLvl4: 0,
     maxCWatchtowersCount: 8,
     
   };

@@ -19,8 +19,11 @@ const generateStorageData = (lvl = 1) => {
     },
 
     bonus: lvl === 4 ? 15 : 0, // скидка на постройки
-    currentStorageCount: 0, // текущее кол-во складов
-    maxStorages: Math.floor((10 * lvl) / (2 ** lvl)),
+    storagesLvl1: 0, // текущее кол-во складов 1-го уровня
+    storagesLvl2: 0, // текущее кол-во складов 2-го уровня
+    storagesLvl3: 0, // текущее кол-во складов 3-го уровня
+    storagesLvl4: 0, // текущее кол-во складов 4-го уровня
+    maxStoragesForCurrentLvl: Math.floor((10 * lvl) / (2 ** lvl)), 
     SupplyStorage: 15 * 2 ** lvl + lvl === 4 ? 5 : 0, // сколько добавляет места для рес-ов
   };
 };
