@@ -2,20 +2,11 @@ import "./RangeSlider.css";
 import { useState } from "react";
 import clock from "../../Data/headerData/clockData";
 
-export default function RangeSlider({ setResMult }) {
-  const [value, setValue] = useState(0); // Начальное значение ползунка
-  const maxValue =
-    clock.minutes === 30
-      ? (24 - clock.hours - 0.5) * 2 * 30
-      : (24 - clock.hours) * 2 * 30; // Расчёт максимального времени поиска
-
-  console.log(value);
-  console.log(maxValue);
-
-  const handleChange = (event) => {
-    setResMult(event.target.value / 30);
-    setValue(event.target.value); // Обновляем значение стейта при изменении ползунка
-  };
+export default function RangeSlider({ setResMult, handleValueChange, value }) {
+  const maxValue = 1440;
+  // clock.minutes === 30
+  //   ? (24 - clock.hours - 0.5) * 2 * 30
+  //   : (24 - clock.hours) * 2 * 30; // Расчёт максимального времени поиска
 
   const printTime = (minutes) => {
     const hours = Math.floor(minutes / 60);
@@ -39,7 +30,9 @@ export default function RangeSlider({ setResMult }) {
           max={maxValue}
           step="30"
           value={value}
-          onChange={handleChange}
+          onChange={(event) => {
+            handleValueChange(event.target.value);
+          }}
         />
       </form>
     </div>

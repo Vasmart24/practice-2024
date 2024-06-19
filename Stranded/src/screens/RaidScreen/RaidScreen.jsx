@@ -15,6 +15,7 @@ export default function RaidScreen({
   resType,
   handleSetScreen,
   handleSuppliesAddition,
+  handleTimeAddition,
 }) {
   const { search, begin } = raidModalStates;
   const { start } = screenStates;
@@ -22,6 +23,7 @@ export default function RaidScreen({
   const [activeModalContent, setActiveModalContent] = useState(search);
   const [resLevel, setResLevel] = useState();
   const [lootRange, setLootRange] = useState([]);
+  const [timeRequired, setTimeRequired] = useState(0);
 
   const max = lootRange[1] + 1;
   const min = lootRange[0];
@@ -89,6 +91,7 @@ export default function RaidScreen({
               resType={resType}
               setActiveModalContent={setActiveModalContent}
               setLootRange={setLootRange}
+              setTimeRequired={setTimeRequired}
             />
           )}
           {activeModalContent === begin && (
@@ -105,6 +108,7 @@ export default function RaidScreen({
                 <button
                   onClick={() => {
                     handleSuppliesAddition(Math.floor(loot / 2));
+                    handleTimeAddition(timeRequired);
                     handleSetScreen(start);
                   }}
                 >

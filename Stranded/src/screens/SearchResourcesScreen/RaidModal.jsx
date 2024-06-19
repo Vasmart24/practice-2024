@@ -11,10 +11,19 @@ export default function RaidModal({
   resLevel,
   setActiveModalContent,
   setLootRange,
+  setTimeRequired,
 }) {
   const [resMult, setResMult] = useState(0);
+  const [value, setValue] = useState(0); // Начальное значение ползунка
   let minRes = 0;
   let maxRes = 0;
+
+  const handleValueChange = (value) => {
+    setResMult(value / 30);
+    setTimeRequired(value);
+    setValue(value); // Обновляем значение стейта при изменении ползунка
+  };
+
   if (resType === raidScreenPropsData.resTypes.supplies) {
     minRes = suppliesData[resLevel].min * resMult;
     maxRes = suppliesData[resLevel].max * resMult;
@@ -22,7 +31,13 @@ export default function RaidModal({
   return (
     <div>
       <h1>Поиск ресурсов</h1>
-      <RangeSlider setResMult={setResMult} />
+      <RangeSlider
+        setValue={setValue}
+        setResMult={setResMult}
+        setTimeRequired={setTimeRequired}
+        handleValueChange={handleValueChange}
+        value={value}
+      />
       <span>
         Можно найти ресурсов: {minRes} — {maxRes}
       </span>
@@ -30,6 +45,7 @@ export default function RaidModal({
       <Button
         onClick={() => {
           setLootRange([minRes, maxRes]);
+          setTimeRequired(value);
           setActiveModalContent(raidModalStates.begin);
         }}
       >
