@@ -8,6 +8,7 @@ import MainScreen from "./screens/MainScreen/MainScreen.jsx";
 import raidScreenPropsData from "./Data/screenData/raidScreenPropsData.js";
 import EquipmentScreen from "./screens/EqiupmentScreen/EquipmentScreen.jsx";
 import suppliesData from "./Data/headerData/suppliesData.js";
+import clock from "./Data/headerData/clockData.js";
 
 export default function Game() {
   const { start, resources, search, equipment } = screenStates;
@@ -20,6 +21,7 @@ export default function Game() {
   });
   const [headerProps, setHeaderProps] = useState({
     supplies: suppliesData.foodCount,
+    minutes: clock.minutes,
   });
   const [isModalOpen, setIsModalOpen] = useState(true);
 
@@ -28,6 +30,14 @@ export default function Game() {
   function handleSetScreen(screenName, props) {
     if (screenName === resources) setRaidScreenProps(props);
     setScreen(screenName);
+  }
+
+  function handleTimeAddition(minutesToAdd) {
+    const newTimeInMinutes = headerProps.minutes + Number(minutesToAdd);
+    setHeaderProps({
+      ...headerProps,
+      minutes: newTimeInMinutes,
+    });
   }
 
   function handleSuppliesAddition(newSupplies) {
@@ -72,6 +82,7 @@ export default function Game() {
             {...raidScreenProps}
             handleSetScreen={handleSetScreen}
             handleSuppliesAddition={handleSuppliesAddition}
+            handleTimeAddition={handleTimeAddition}
           />
         )}
         {screen === start && <MainScreen handleSetScreen={handleSetScreen} />}

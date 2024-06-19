@@ -1,8 +1,9 @@
 import "./Header.css";
 import materialsData from "../../Data/headerData/materialsData";
 import { Dropdown } from "antd";
+import clock from "../../Data/headerData/clockData";
 
-function Header({ supplies }) {
+function Header({ supplies, minutes }) {
   const dropdownSupplies = {
     menu: {
       items: [
@@ -59,7 +60,7 @@ function Header({ supplies }) {
         <div>База</div>
       </div>
       <div className="header__item">
-        <div>Время</div>
+        <div>Время: {clock.time(minutes)}</div>
       </div>
     </header>
   );
