@@ -3,7 +3,6 @@ import RangeSlider from "./RangeSlider.jsx";
 import { raidModalStates } from "../../Data/reusableStatesStrings.js";
 import raidScreenPropsData from "../../Data/screenData/raidScreenPropsData.js";
 import suppliesData from "./../../Data/headerData/suppliesData.js";
-import materialsData from "../../Data/headerData/materialsData.js";
 import { useState } from "react";
 
 // Главный компонент ScreenSearch, в который включаем RangeSlider
@@ -13,6 +12,7 @@ export default function RaidModal({
   setActiveModalContent,
   setLootRange,
   setTimeRequired,
+  timeRequired,
   minutes,
 }) {
   const [resMult, setResMult] = useState(0);
@@ -27,11 +27,10 @@ export default function RaidModal({
   };
 
   if (resType === raidScreenPropsData.resTypes.supplies) {
-    minRes = [suppliesData][resLevel].min * resMult;
+    minRes = suppliesData[resLevel].min * resMult;
     maxRes = suppliesData[resLevel].max * resMult;
   }
 
-  console.log("minutes", minutes);
   return (
     <div>
       <h1>Поиск ресурсов</h1>
@@ -49,9 +48,11 @@ export default function RaidModal({
       <br />
       <Button
         onClick={() => {
-          setLootRange([minRes, maxRes]);
-          setTimeRequired(value);
-          setActiveModalContent(raidModalStates.begin);
+          if (timeRequired > 0) {
+            setLootRange([minRes, maxRes]);
+            setTimeRequired(value);
+            setActiveModalContent(raidModalStates.begin);
+          }
         }}
         disabled={minutes >= 1440}
       >

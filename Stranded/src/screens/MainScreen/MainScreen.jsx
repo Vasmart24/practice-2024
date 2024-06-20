@@ -81,7 +81,7 @@ export default function MainScreen({ handleSetScreen }) {
 
   return (
     <Dropdown {...dropdown}>
-      <div className="mainview">Привет я MainScreen</div>
+      <div className="mainview"></div>
     </Dropdown>
   );
 }

@@ -98,6 +98,7 @@ export default function Game() {
 
   return (
     <div className="game-container">
+      <Header {...headerProps} />
       {screen !== equipment ||
         (screen !== battle && <Header {...headerProps} />)}
       <div className="gameScreen">

@@ -19,7 +19,7 @@ export default function RaidScreen({
   minutes,
 }) {
   const { search, begin } = raidModalStates;
-  const { start } = screenStates;
+  const { start, battle } = screenStates;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeModalContent, setActiveModalContent] = useState(search);
   const [resLevel, setResLevel] = useState();
@@ -93,6 +93,7 @@ export default function RaidScreen({
               setActiveModalContent={setActiveModalContent}
               setLootRange={setLootRange}
               setTimeRequired={setTimeRequired}
+              timeRequired={timeRequired}
               minutes={minutes}
             />
           )}
@@ -116,7 +117,13 @@ export default function RaidScreen({
                 >
                   Сбежать
                 </button>
-                <button>Сразиться</button>
+                <button
+                  onClick={() => {
+                    handleSetScreen(battle);
+                  }}
+                >
+                  Сразиться
+                </button>
               </div>
             </div>
           )}
