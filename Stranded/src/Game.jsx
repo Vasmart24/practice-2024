@@ -102,6 +102,7 @@ export default function Game() {
       <div className="gameScreen">
         {screen === resources && (
           <RaidScreen
+            handleSetMaterials={handleSetMaterials}
             {...raidScreenProps}
             handleSetScreen={handleSetScreen}
             handleSuppliesAddition={handleSuppliesAddition}

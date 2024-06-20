@@ -4,6 +4,7 @@ import { raidModalStates } from "../../Data/reusableStatesStrings.js";
 import raidScreenPropsData from "../../Data/screenData/raidScreenPropsData.js";
 import suppliesData from "./../../Data/headerData/suppliesData.js";
 import { useState } from "react";
+import materialsData from "../../Data/headerData/materialsData.js"; 
 
 // Главный компонент ScreenSearch, в который включаем RangeSlider
 export default function RaidModal({
@@ -15,6 +16,7 @@ export default function RaidModal({
   timeRequired,
   minutes,
 }) {
+  const [wood, ...materials] = materialsData;
   const [resMult, setResMult] = useState(0);
   const [value, setValue] = useState(0); // Начальное значение ползунка
   let minRes = 0;
@@ -29,6 +31,9 @@ export default function RaidModal({
   if (resType === raidScreenPropsData.resTypes.supplies) {
     minRes = suppliesData[resLevel].min * resMult;
     maxRes = suppliesData[resLevel].max * resMult;
+  } else {
+    minRes = wood.min * resMult;
+    maxRes = wood.max * resMult;
   }
 
   return (

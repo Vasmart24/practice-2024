@@ -10,6 +10,7 @@ import RearLeftButton from "../../components/equipmentScreenButtons/RearLeftButt
 import RearRightButton from "../../components/equipmentScreenButtons/RearRightButton";
 import "./EnemySide.css";
 import suppliesEnemies from "../../Data/enemiesData/startEnemies/suppliesEnemies";
+import Hero from "../../Data/alliesData/PlayerData.js";
 import { Dropdown, Modal, Button } from "antd";
 import { useState } from "react";
 import { screenStates } from "./../../Data/reusableStatesStrings";
@@ -20,8 +21,18 @@ export default function EnemySide({ setScreen }) {
   const [count, setCount] = useState(suppliesEnemies.rat.count);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  function randomIntFromInterval(min, max) { // min and max included 
+    return Math.round(Math.random() * (max - min) + min);
+  }
+
   function handleSetHP() {
-    const newHP = hp - 5;
+    const {min, max} = Hero.dmg
+    console.log(`minDmg: ${min}`)
+    const currentDamage = randomIntFromInterval(min, max);
+    console.log(`hp: ${hp}`)
+    const newHP = hp - currentDamage;
+    console.log(`current damage: ${currentDamage}`);
+    console.log(`hp after hit: ${hp}`)
     if (newHP <= 0) {
       if (count !== 0) {
         setCount(() => {

@@ -10,8 +10,10 @@ import {
   screenStates,
   raidModalStates,
 } from "../../Data/reusableStatesStrings";
+import materialsData from "../../Data/headerData/materialsData.js";
 
 export default function RaidScreen({
+  handleSetMaterials,
   resType,
   handleSetScreen,
   handleSuppliesAddition,
@@ -23,13 +25,13 @@ export default function RaidScreen({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeModalContent, setActiveModalContent] = useState(search);
   const [resLevel, setResLevel] = useState();
-  const [lootRange, setLootRange] = useState([]);
+  const [lootRange, setLootRange] = useState([0, 0]);
   const [timeRequired, setTimeRequired] = useState(0);
 
+  const [wood, ...materials] = materialsData;
   const max = lootRange[1] + 1;
   const min = lootRange[0];
   const loot = Math.floor(Math.random() * (max - min) + min);
-
   const dropdown = {
     menu: {
       items: [
@@ -110,10 +112,16 @@ export default function RaidScreen({
               <div>
                 <button
                   onClick={() => {
+                    if(resType === 'supplies'){
                     handleSuppliesAddition(Math.floor(loot / 2));
                     handleTimeAddition(timeRequired);
-                    handleSetScreen(start);
-                  }}
+                  } else {
+                    wood.count += Math.floor(loot / 2);
+                    handleSetMaterials(wood);
+                    handleTimeAddition(timeRequired)
+                  }
+                  handleSetScreen(start);
+                }}
                 >
                   Сбежать
                 </button>
