@@ -16,3 +16,10 @@
   gap: 0.5rem;
   /* padding-right: 2em; */
 }
+
+.hamster-retard {
+  background-image: url("https://vseigru.net/flash/all/1/igra-khomyak-koin-kripta-bitva.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}

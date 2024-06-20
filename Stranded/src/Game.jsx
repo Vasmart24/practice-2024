@@ -42,6 +42,15 @@ export default function Game() {
     setScreen(screenName);
   }
 
+  function handleTimeChange(newTime) {
+    setHeaderProps((headerProps) => {
+      return {
+        ...headerProps,
+        minutes: newTime,
+      };
+    });
+  } 
+
   function handleTimeAddition(minutesToAdd) {
     const newTimeInMinutes = headerProps.minutes + Number(minutesToAdd);
     setHeaderProps((headerProps) => {
@@ -110,7 +119,7 @@ export default function Game() {
             minutes={headerProps.minutes}
           />
         )}
-        {screen === start && <MainScreen handleSetScreen={handleSetScreen} />}
+        {screen === start && <MainScreen handleSetScreen={handleSetScreen} handleTimeChange={handleTimeChange}/>}
         {screen === equipment && (
           <EquipmentScreen handleSetScreen={handleSetScreen} />
         )}

@@ -5,7 +5,7 @@ import raidScreenPropsData from "../../Data/screenData/raidScreenPropsData";
 // import MainScreenFooter from "../../components/MainScreenFooter/MainScreenFooter";
 // import MainHeader from "../../components/MainHeader/MainHeader";
 
-export default function MainScreen({ handleSetScreen }) {
+export default function MainScreen({ handleSetScreen, handleTimeChange }) {
   const { resources, equipment, construction } = screenStates;
 
   const dropdown = {
@@ -46,7 +46,7 @@ export default function MainScreen({ handleSetScreen }) {
           key: "4",
         },
         {
-          label: "Влюбиться",
+          label: "Спать",
           key: "5",
         },
       ],
@@ -73,6 +73,8 @@ export default function MainScreen({ handleSetScreen }) {
             });
         } else if (key === "3") {
           handleSetScreen(equipment);
+        } else if (key === "5") {
+          handleTimeChange(480)
         }
       },
     },
