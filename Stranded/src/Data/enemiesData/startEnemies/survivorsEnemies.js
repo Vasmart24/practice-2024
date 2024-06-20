@@ -1,19 +1,19 @@
-import EnemyUnit from "../enemyClass";
+import Unit from "../../UnitsClass";
 
-const dog = new EnemyUnit(
+const dog = new Unit(
   'Бешеный пёс', // name
   8, // hp
   3, // atk
-  EnemyUnit.setDef(0, 0), // def
-  EnemyUnit.setDmg(0, 2), // dmg
+  Unit.setDef(0, 0), // def
+  Unit.setDmg(0, 2), // dmg
   12, // initiative | count and picture are default
 );
 
-const boss = new EnemyUnit(
+const boss = new Unit(
   'Заражённый пёс', // name
   25, // hp
   8, // atk
-  EnemyUnit.setDef(3, 8),
-  EnemyUnit.setDmg(2, 8),
+  Unit.setDef(3, 8),
+  Unit.setDmg(2, 8),
   14, // initiative | count and picture are default
 );
