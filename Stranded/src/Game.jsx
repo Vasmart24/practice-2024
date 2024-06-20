@@ -102,7 +102,7 @@ export default function Game() {
         {screen === construction && (
           <ConstructionScreen handleSetScreen={handleSetScreen} />
         )}
-        {screen === battle && <BattleScreen />}
+        {screen === battle && <BattleScreen setScreen={setScreen} />}
       </div>
       {isDropdownActive && (
         <Dropdown {...dropdown}>

@@ -10,11 +10,66 @@ import RearLeftButton from "../../components/equipmentScreenButtons/RearLeftButt
 import RearRightButton from "../../components/equipmentScreenButtons/RearRightButton";
 import "./EnemySide.css";
 import suppliesEnemies from "../../Data/enemiesData/startEnemies/suppliesEnemies";
+import { Dropdown, Modal, Button } from "antd";
+import { useState } from "react";
+import { screenStates } from "./../../Data/reusableStatesStrings";
 
-export default function EnemySide() {
-  console.log(suppliesEnemies.rat.picture);
+export default function EnemySide({ setScreen }) {
+  const { start } = screenStates;
+  const [hp, setHP] = useState(suppliesEnemies.rat.hp);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  function handleSetHP() {
+    const newHP = hp - 5;
+    if (newHP <= 0) {
+      setIsModalOpen(true);
+    }
+    setHP(newHP);
+  }
+
+  const dropdown = {
+    menu: {
+      items: [
+        {
+          label: `Здоровье: ${hp}`,
+          key: "0",
+        },
+      ],
+    },
+    trigger: ["contextMenu"],
+  };
+
+  // const modal = {
+  //   open: isModalOpen,
+
+  //   onOk: () => {
+  //     setIsModalOpen(false);
+  //     setScreen(start);
+  //   },
+  // };
+
   return (
     <div className="enemySide">
+      <Modal
+        open={isModalOpen}
+        onOk={() => {
+          setIsModalOpen(false);
+          setScreen(start);
+        }}
+        footer={[
+          <Button
+            key="OK"
+            onClick={() => {
+              setIsModalOpen(false);
+              setScreen(start);
+            }}
+          >
+            Ура
+          </Button>,
+        ]}
+      >
+        <p>Победа!</p>
+      </Modal>
       <div className="enemy_grid">
         <div></div>
         <MainHeroButton className="battle_screen-button" text="Главный Босс" />
@@ -28,11 +83,15 @@ export default function EnemySide() {
         <FlankCenterButton className="battle_screen-button" />
         <FlankLeftButton className="battle_screen-button" />
         <span className="screen_item-span">ФЛАНГ</span>
-        <AvangardRightButton
-          picture={suppliesEnemies.rat.picture}
-          className="battle_screen-button"
-        />
-        <AvangardCenterButton className="battle_screen-button" />
+        <AvangardRightButton className="battle_screen-button" />
+        <Dropdown {...dropdown}>
+          <div>
+            <AvangardCenterButton
+              onClick={handleSetHP}
+              className="battle_screen-button"
+            />
+          </div>
+        </Dropdown>
         <AvangardLeftButton className="battle_screen-button" />
         <span className="screen_item-span">АВАНГАРД</span>
       </div>
