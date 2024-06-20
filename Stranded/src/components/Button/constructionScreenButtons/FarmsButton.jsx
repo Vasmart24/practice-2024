@@ -29,7 +29,7 @@ function FarmButtonLvl1({ disabled=false, handleSetMaterials }) {
             </div>
             <div className="buildings-button-header">
                 <span>Шт: {farmsCount}</span>
-                <Button 
+                <Button
                     onClick={() => {
                         setFarmsCount(farmsCount + 1);
                         wood.count -= farmsData.lvl1.cost.wood;
@@ -37,7 +37,15 @@ function FarmButtonLvl1({ disabled=false, handleSetMaterials }) {
                     }}
                     className={countButtonClass} 
                     disabled={isMaxFarms || !isEnoughResourcesForBuild}
-                >+</Button>
+                >
+                    +
+                    <i className="building-cost">
+                        <h3>Стоимость строительства:</h3>
+                        <ul>
+                            <li>Брёвна: {farmsData.lvl1.cost.wood}</li>
+                        </ul>
+                    </i>
+                </Button>
             </div>
         </div>
     );

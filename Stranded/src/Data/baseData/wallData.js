@@ -31,12 +31,14 @@ const generateWallData = (lvl = 1) => {
   }
 };
 
-export default wallData = {
+const wallData = {
   lvl1: generateWallData(1),
   lvl2: generateWallData(2),
   lvl3: generateWallData(3),
   lvl4: generateWallData(4),
 };
+
+export default wallData;
 
 // 1 - 300|5/10%
 // 2 - 600|10/20%
