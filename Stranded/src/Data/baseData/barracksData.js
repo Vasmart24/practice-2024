@@ -16,12 +16,23 @@ const generateBarracksData = (lvl = 1) => {
 
     buildTime: {
       minutes: isMintesMore30 ? 0 : 30,
-      hours: 5 * lvl + (isMintesMore30 ? 0 : 1),
+      hours: 6 * lvl + (isMintesMore30 ? 0 : 1),
     },
 
-    currentWorkers: 0,
-    maxWorkers: 4 * lvl,
-    suppiesPerDay: Math.floor(10 * (lvl ** 0.8)),
+    currentsoldiers: 0,
+    maxSoldiers: 5 * lvl,
+    soldiersBonus: {
+      atk: Math.round(2 * (1.9 ** lvl)),
+      def: {
+        pure: Math.round(2 * (1.5 ** lvl)),
+        percent: Math.round(8 * lvl),
+      },
+      dmg: {
+        min: 2 + lvl === 1 ? 2 : (3 * lvl),
+        max: 2 + lvl === 1 ? 4 : (5 * lvl),
+      }
+    },
+
     barracklvl1: 0,
     barracklvl2: 0,
     barracklvl3: 0,
