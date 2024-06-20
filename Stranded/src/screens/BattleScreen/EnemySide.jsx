@@ -17,14 +17,23 @@ import { screenStates } from "./../../Data/reusableStatesStrings";
 export default function EnemySide({ setScreen }) {
   const { start } = screenStates;
   const [hp, setHP] = useState(suppliesEnemies.rat.hp);
+  const [count, setCount] = useState(suppliesEnemies.rat.count);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   function handleSetHP() {
     const newHP = hp - 5;
     if (newHP <= 0) {
-      setIsModalOpen(true);
+      if (count !== 0) {
+        setCount(() => {
+          return count - 1;
+        });
+        setHP(suppliesEnemies.rat.hp);
+      } else {
+        setIsModalOpen(true);
+      }
+    } else {
+      setHP(newHP);
     }
-    setHP(newHP);
   }
 
   const dropdown = {
