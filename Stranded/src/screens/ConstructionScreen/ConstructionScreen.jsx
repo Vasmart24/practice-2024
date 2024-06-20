@@ -37,7 +37,7 @@ export default function ConstructionScreen({handleSetScreen, handleSetMaterials}
                 </div>
                 <div className="buildings">
                     <FarmButtonLvl1 handleSetMaterials={handleSetMaterials}></FarmButtonLvl1>
-                    <HousingButtonLvl1></HousingButtonLvl1>
+                    <HousingButtonLvl1 handleSetMaterials={handleSetMaterials}></HousingButtonLvl1>
                     <StorageButtonLvl1></StorageButtonLvl1>
                     <BarracksButtonLvl1></BarracksButtonLvl1>
                     <WatchTowersButtonLvl1></WatchTowersButtonLvl1>

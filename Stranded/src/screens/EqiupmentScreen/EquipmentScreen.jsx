@@ -26,7 +26,7 @@ export default function BattleScreen({ handleSetScreen }) {
   return (
     <Dropdown {...dropdown}>
       <div className="equipment-screen">
-        <EquipmentScreenHeader />
+        {/* <EquipmentScreenHeader /> */}
         <EquipmentScreenMain />
         {/* <EquipmentScreenFooter/> */}
       </div>
