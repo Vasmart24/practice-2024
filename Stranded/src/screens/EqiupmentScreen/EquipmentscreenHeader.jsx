@@ -1,13 +1,15 @@
-import { baseResources } from "../../Data/headerData/materialsData";
-import "./EquipmentScreenHeader.css"
+import materialsData from "../../Data/headerData/materialsData";
+import "./EquipmentScreenHeader.css";
 
 export default function EquipmentScreenHeader() {
-  return(
+  return (
     <div>
       <ul className="list">
-        {baseResources.map(({ key, name, count }) => {
+        {materialsData.map(({ key, name, count }) => {
           return (
-            <p className="list-item" key={key}>{name}: {count}</p>
+            <p className="list-item" key={key}>
+              {name}: {count}
+            </p>
           );
         })}
       </ul>

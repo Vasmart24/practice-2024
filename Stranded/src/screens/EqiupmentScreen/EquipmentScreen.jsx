@@ -3,7 +3,7 @@
 import EquipmentScreenMain from "./EquipmentScreenMain.jsx";
 import "./EquipmentScreen.css";
 import { Dropdown } from "antd";
-import screenStates from "../../Data/screenData/screenStates.js";
+import { screenStates } from "../../Data/reusableStatesStrings.js";
 
 export default function BattleScreen({ handleSetScreen }) {
   const { start } = screenStates;

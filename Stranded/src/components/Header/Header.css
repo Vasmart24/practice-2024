@@ -41,6 +41,12 @@
   align-items: center; */
 }
 
+.header__item:hover {
+  background-color: #3a3a3a;
+  color: #fff;
+  transition: all linear 0.3s;
+}
+
 .header__item:last-child {
   border: none;
 }

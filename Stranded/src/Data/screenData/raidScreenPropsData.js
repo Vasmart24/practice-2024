@@ -1,8 +1,8 @@
 export default {
   resTypes: {
     survivors: "survivors",
-    building: "building",
-    weapon: "weapon",
+    materials: "materials",
+    weapons: "weapons",
     supplies: "supplies",
   },
 };

@@ -1,27 +1,30 @@
 import { useState } from "react";
 import Header from "./components/Header/Header.jsx";
-import Button from "./components/Button/Button.jsx";
 import { Dropdown, Modal } from "antd";
-import screenStates from "./Data/screenData/screenStates.js";
+import { screenStates } from "./Data/reusableStatesStrings.js";
 import "./Game.css";
 import RaidScreen from "./screens/RaidScreen/RaidScreen.jsx";
 import MainScreen from "./screens/MainScreen/MainScreen.jsx";
-import SearchScreen from "./screens/SearchResourcesScreen/SearchScreen.jsx";
 import raidScreenPropsData from "./Data/screenData/raidScreenPropsData.js";
 import EquipmentScreen from "./screens/EqiupmentScreen/EquipmentScreen.jsx";
 import BattleScreen from "./screens/BattleScreen/BattleScreen.jsx";
+import ConstructionScreen from "./screens/ConstructionScreen/ConstructionScreen.jsx";
+import suppliesData from "./Data/headerData/suppliesData.js";
+import clock from "./Data/headerData/clockData.js";
 
 export default function Game() {
-  const { start, resources, search, equipment, battle } = screenStates;
-  const { survivors, building, weapon, supplies } =
+  const { start, resources, search, equipment, construction, battle } =
+    screenStates;
+  const { survivors, materials, weapons, supplies } =
     raidScreenPropsData.resTypes;
-  const raidScreen = {
-    resType: survivors,
-  };
 
   const [screen, setScreen] = useState(battle);
   const [raidScreenProps, setRaidScreenProps] = useState({
     resType: survivors,
+  });
+  const [headerProps, setHeaderProps] = useState({
+    supplies: suppliesData.foodCount,
+    minutes: clock.minutes,
   });
   const [isModalOpen, setIsModalOpen] = useState(true);
 
@@ -30,6 +33,26 @@ export default function Game() {
   function handleSetScreen(screenName, props) {
     if (screenName === resources) setRaidScreenProps(props);
     setScreen(screenName);
+  }
+
+  function handleTimeAddition(minutesToAdd) {
+    const newTimeInMinutes = headerProps.minutes + Number(minutesToAdd);
+    setHeaderProps((headerProps) => {
+      return {
+        ...headerProps,
+        minutes: newTimeInMinutes,
+      };
+    });
+  }
+
+  function handleSuppliesAddition(suppliesToAdd) {
+    const curSupplies = headerProps.supplies;
+    setHeaderProps((headerProps) => {
+      return {
+        ...headerProps,
+        supplies: curSupplies + suppliesToAdd,
+      };
+    });
   }
 
   const dropdown = {
@@ -59,17 +82,26 @@ export default function Game() {
 
   return (
     <div className="game-container">
-      {(screen !== equipment) || (screen !== battle) && <Header />}
+      {screen !== equipment ||
+        (screen !== battle && <Header {...headerProps} />)}
       <div className="gameScreen">
         {screen === resources && (
-          <RaidScreen {...raidScreenProps} handleSetScreen={handleSetScreen} />
+          <RaidScreen
+            {...raidScreenProps}
+            handleSetScreen={handleSetScreen}
+            handleSuppliesAddition={handleSuppliesAddition}
+            handleTimeAddition={handleTimeAddition}
+            minutes={headerProps.minutes}
+          />
         )}
         {screen === start && <MainScreen handleSetScreen={handleSetScreen} />}
-        {screen === search && <SearchScreen />}
         {screen === equipment && (
           <EquipmentScreen handleSetScreen={handleSetScreen} />
         )}
-        {screen === battle && <BattleScreen/>}
+        {screen === construction && (
+          <ConstructionScreen handleSetScreen={handleSetScreen} />
+        )}
+        {screen === battle && <BattleScreen />}
       </div>
       {isDropdownActive && (
         <Dropdown {...dropdown}>

@@ -22,6 +22,11 @@ const generateFarmsData = (lvl = 1) => {
     currentWorkers: 0,
     maxWorkers: 4 * lvl,
     suppiesPerDay: Math.floor(10 * (lvl ** 0.8)),
+    farmslvl1: 0,
+    farmslvl2: 0,
+    farmslvl3: 0,
+    farmslvl4: 0,
+    
   }
 };
 
