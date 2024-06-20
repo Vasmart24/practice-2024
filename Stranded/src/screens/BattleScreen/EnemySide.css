@@ -1,12 +1,12 @@
 .enemySide {
-    display: flex;
+  display: flex;
   justify-content: center;
   align-content: center;
   width: 100vw;
-  height: 45vh; 
+  height: 45vh;
   padding-top: 0.5rem;
   padding-bottom: 1rem;
-  background-color:rgba(215, 231, 250, 0.665)
+  background-color: rgba(215, 231, 250, 0.665);
 }
 .enemy_grid {
   display: grid;
@@ -22,4 +22,20 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  animation: rotate 1s 1;
+}
+
+@keyframes rotate {
+  25% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
