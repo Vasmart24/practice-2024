@@ -7,6 +7,7 @@ import RaidScreen from "./screens/RaidScreen/RaidScreen.jsx";
 import MainScreen from "./screens/MainScreen/MainScreen.jsx";
 import raidScreenPropsData from "./Data/screenData/raidScreenPropsData.js";
 import EquipmentScreen from "./screens/EqiupmentScreen/EquipmentScreen.jsx";
+import BattleScreen from "./screens/BattleScreen/BattleScreen.jsx";
 import ConstructionScreen from "./screens/ConstructionScreen/ConstructionScreen.jsx";
 import suppliesData from "./Data/headerData/suppliesData.js";
 import clock from "./Data/headerData/clockData.js";
@@ -15,7 +16,8 @@ import materialsData from "./Data/headerData/materialsData.js";
 const [wood, stone, iron, steel] = materialsData;
 
 export default function Game() {
-  const { start, resources, search, equipment, construction } = screenStates;
+  const { start, resources, search, equipment, construction, battle } =
+    screenStates;
   const { survivors, materials, weapons, supplies } =
     raidScreenPropsData.resTypes;
 
@@ -96,7 +98,8 @@ export default function Game() {
 
   return (
     <div className="game-container">
-      {screen !== equipment && <Header {...headerProps} />}
+      {screen !== equipment ||
+        (screen !== battle && <Header {...headerProps} />)}
       <div className="gameScreen">
         {screen === resources && (
           <RaidScreen
@@ -115,6 +118,7 @@ export default function Game() {
           handleSetScreen={handleSetScreen}
           handleSetMaterials={handleSetMaterials}
         />}
+        {screen === battle && <BattleScreen />}
       </div>
       {isDropdownActive && (
         <Dropdown {...dropdown}>

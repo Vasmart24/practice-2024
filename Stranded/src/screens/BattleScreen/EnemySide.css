@@ -1,0 +1,18 @@
+.enemySide {
+    display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100vw;
+  height: 45vh; 
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+  background-color:rgba(215, 231, 250, 0.665)
+}
+.enemy_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 0.7fr);
+  grid-template-rows: repeat(4, 0.3fr);
+  /* align-items: stretch; */
+  gap: 0.5rem;
+  /* padding-right: 2em; */
+}

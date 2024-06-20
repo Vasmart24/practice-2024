@@ -1,0 +1,38 @@
+.friendlySide {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100vw;
+  height: 45vh; 
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  background-color:rgba(215, 231, 250, 0.665)
+}
+.friendly_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 0.7fr);
+  grid-template-rows: repeat(4, 0.3fr);
+  gap: 0.5rem;
+  /* padding-right: 2em; */
+  /* justify-content: center;
+  text-justify: center; */
+  /* justify-items: center; */
+  /* justify-self: center; */
+  /* align-items: center; */
+  /* align-self: center; */
+}
+
+.battle_screen-button {
+  font-weight: bolder;
+  color: black;
+  border-radius: 5px;
+  background-color:rgba(0, 242, 255, 0.395);
+  border: none;
+  font-size: medium;
+  height: 10vh;
+  width: 10vh;
+}
+
+.battle_screen-button:hover {
+  background: #3e6ae1;
+}

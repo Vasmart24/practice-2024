@@ -1,9 +1,9 @@
 import Button from "../Button/Button.jsx";
 
-function MainHeroButton({ onClick, className }) {
+function MainHeroButton({ onClick, className, text }) {
     return (
       <Button className={className} onClick={onClick}>
-        <div>Главный герой</div>
+        <div>{ text }</div>
       </Button>
     );
   }
