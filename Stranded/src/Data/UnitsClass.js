@@ -1,4 +1,4 @@
-export default class EnemyUnit {
+export default class Unit {
   static setDef(pure, percent) {
     return {pure, percent};
   }
@@ -12,7 +12,7 @@ export default class EnemyUnit {
     initiative = 1,
     picture = '',
     count = 1,
-  ) 
+  )
     {
     this.name = name;
     this.hp = hp;

@@ -1,20 +1,20 @@
-import EnemyUnit from "../enemyClass";
+import Unit from "../../UnitsClass";
 
-const purpleHawkmoth = new EnemyUnit(
+const purpleHawkmoth = new Unit(
   'Лиловый бражник',
   10,
   0,
-  EnemyUnit.setDef(1, 4),
-  EnemyUnit.setDmg(1, 1),
+  Unit.setDef(1, 4),
+  Unit.setDmg(1, 1),
   1,
 );
 
 
-const nidusWorm = new EnemyUnit(
+const nidusWorm = new Unit(
   'Червь Нидуса',
   30,
   4,
-  EnemyUnit.setDef(6, 10),
-  EnemyUnit.setDmg(3, 7),
+  Unit.setDef(6, 10),
+  Unit.setDmg(3, 7),
   2,
 );

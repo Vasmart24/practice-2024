@@ -11,6 +11,9 @@ import BattleScreen from "./screens/BattleScreen/BattleScreen.jsx";
 import ConstructionScreen from "./screens/ConstructionScreen/ConstructionScreen.jsx";
 import suppliesData from "./Data/headerData/suppliesData.js";
 import clock from "./Data/headerData/clockData.js";
+import materialsData from "./Data/headerData/materialsData.js";
+
+const [wood, stone, iron, steel] = materialsData;
 
 export default function Game() {
   const { start, resources, search, equipment, construction, battle } =
@@ -25,6 +28,10 @@ export default function Game() {
   const [headerProps, setHeaderProps] = useState({
     supplies: suppliesData.foodCount,
     minutes: clock.minutes,
+    wood: wood,
+    stone: stone,
+    iton: iron,
+    steel: steel,
   });
   const [isModalOpen, setIsModalOpen] = useState(true);
 
@@ -51,6 +58,15 @@ export default function Game() {
       return {
         ...headerProps,
         supplies: curSupplies + suppliesToAdd,
+      };
+    });
+  }
+
+  function handleSetMaterials(...materials) {
+    setHeaderProps((headerProps) => {
+      return {
+        ...headerProps,
+        materials,
       };
     });
   }
@@ -100,7 +116,10 @@ export default function Game() {
           <EquipmentScreen handleSetScreen={handleSetScreen} />
         )}
         {screen === construction && (
-          <ConstructionScreen handleSetScreen={handleSetScreen} />
+          <ConstructionScreen
+            handleSetScreen={handleSetScreen}
+            handleSetMaterials={handleSetMaterials}
+          />
         )}
         {screen === battle && <BattleScreen setScreen={setScreen} />}
       </div>

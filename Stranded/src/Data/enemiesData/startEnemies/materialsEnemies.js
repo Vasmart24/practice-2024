@@ -1,20 +1,20 @@
-import EnemyUnit from "../enemyClass";
+import Unit from "../../UnitsClass";
 
-const viper = new EnemyUnit(
+const viper = new Unit(
   'Гадюка', // name
   12, // hp
   2, // atk
-  EnemyUnit.setDef(1, 5), // def
-  EnemyUnit.setDmg(2, 3), // dmg
+  Unit.setDef(1, 5), // def
+  Unit.setDmg(2, 3), // dmg
   1,
 );
 
 
-const anaconda = new EnemyUnit(
+const anaconda = new Unit(
   'Анаконда',
   38,
   6,
-  EnemyUnit.setDef(5, 12),
-  EnemyUnit.setDmg(4, 8),
+  Unit.setDef(5, 12),
+  Unit.setDmg(4, 8),
   2,
 );
