@@ -119,6 +119,8 @@ export default function RaidScreen({
                 </button>
                 <button
                   onClick={() => {
+                    handleSuppliesAddition(loot);
+                    handleTimeAddition(timeRequired);
                     handleSetScreen(battle);
                   }}
                 >
