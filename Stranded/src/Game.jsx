@@ -18,7 +18,7 @@ export default function Game() {
   const { survivors, materials, weapons, supplies } =
     raidScreenPropsData.resTypes;
 
-  const [screen, setScreen] = useState(battle);
+  const [screen, setScreen] = useState(start);
   const [raidScreenProps, setRaidScreenProps] = useState({
     resType: survivors,
   });
@@ -82,6 +82,7 @@ export default function Game() {
 
   return (
     <div className="game-container">
+      <Header {...headerProps} />
       {screen !== equipment ||
         (screen !== battle && <Header {...headerProps} />)}
       <div className="gameScreen">
