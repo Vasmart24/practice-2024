@@ -34,17 +34,21 @@ export default function Game() {
 
   function handleTimeAddition(minutesToAdd) {
     const newTimeInMinutes = headerProps.minutes + Number(minutesToAdd);
-    setHeaderProps({
-      ...headerProps,
-      minutes: newTimeInMinutes,
+    setHeaderProps((headerProps) => {
+      return {
+        ...headerProps,
+        minutes: newTimeInMinutes,
+      };
     });
   }
 
-  function handleSuppliesAddition(newSupplies) {
+  function handleSuppliesAddition(suppliesToAdd) {
     const curSupplies = headerProps.supplies;
-    setHeaderProps({
-      ...headerProps,
-      supplies: curSupplies + newSupplies,
+    setHeaderProps((headerProps) => {
+      return {
+        ...headerProps,
+        supplies: curSupplies + suppliesToAdd,
+      };
     });
   }
 
@@ -83,6 +87,7 @@ export default function Game() {
             handleSetScreen={handleSetScreen}
             handleSuppliesAddition={handleSuppliesAddition}
             handleTimeAddition={handleTimeAddition}
+            minutes={headerProps.minutes}
           />
         )}
         {screen === start && <MainScreen handleSetScreen={handleSetScreen} />}

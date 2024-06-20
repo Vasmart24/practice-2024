@@ -2,8 +2,13 @@ import "./RangeSlider.css";
 import { useState } from "react";
 import clock from "../../Data/headerData/clockData";
 
-export default function RangeSlider({ setResMult, handleValueChange, value }) {
-  const maxValue = 1440;
+export default function RangeSlider({
+  setResMult,
+  handleValueChange,
+  value,
+  minutes,
+}) {
+  const maxValue = 1440 - minutes;
   // clock.minutes === 30
   //   ? (24 - clock.hours - 0.5) * 2 * 30
   //   : (24 - clock.hours) * 2 * 30; // Расчёт максимального времени поиска
