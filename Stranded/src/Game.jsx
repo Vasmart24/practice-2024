@@ -7,11 +7,12 @@ import RaidScreen from "./screens/RaidScreen/RaidScreen.jsx";
 import MainScreen from "./screens/MainScreen/MainScreen.jsx";
 import raidScreenPropsData from "./Data/screenData/raidScreenPropsData.js";
 import EquipmentScreen from "./screens/EqiupmentScreen/EquipmentScreen.jsx";
+import ConstructionScreen from "./screens/ConstructionScreen/ConstructionScreen.jsx";
 import suppliesData from "./Data/headerData/suppliesData.js";
 import clock from "./Data/headerData/clockData.js";
 
 export default function Game() {
-  const { start, resources, search, equipment } = screenStates;
+  const { start, resources, search, equipment, construction } = screenStates;
   const { survivors, materials, weapons, supplies } =
     raidScreenPropsData.resTypes;
 
@@ -94,6 +95,7 @@ export default function Game() {
         {screen === equipment && (
           <EquipmentScreen handleSetScreen={handleSetScreen} />
         )}
+        {screen === construction && <ConstructionScreen handleSetScreen={handleSetScreen} />}
       </div>
       {isDropdownActive && (
         <Dropdown {...dropdown}>

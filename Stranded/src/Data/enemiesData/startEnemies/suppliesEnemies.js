@@ -6,8 +6,7 @@ const rat = new EnemyUnit(
   1, // atk
   EnemyUnit.setDef(0, 5), // def
   EnemyUnit.setDmg(1, 1), // dmg
-  '', // стиль для вставки картинки мыши + стиль самой кнопки
-  9, // initiative
+  9, // initiative | count and picture are default
 );
 
 const boss = new EnemyUnit(
@@ -15,7 +14,6 @@ const boss = new EnemyUnit(
   35, // hp
   5, // atk
   EnemyUnit.setDef(5, 10),
-  EnemyUnit.setDmg(4, 6),
-  '', // стиль для вставки картинки мега мыши + стиль самой кнопки
-  7, // initiative
+  EnemyUnit.setDmg(3, 6),
+  7, // initiative | count and picture are default
 );
