@@ -16,6 +16,7 @@ export default function RaidScreen({
   handleSetScreen,
   handleSuppliesAddition,
   handleTimeAddition,
+  minutes,
 }) {
   const { search, begin } = raidModalStates;
   const { start } = screenStates;
@@ -92,6 +93,7 @@ export default function RaidScreen({
               setActiveModalContent={setActiveModalContent}
               setLootRange={setLootRange}
               setTimeRequired={setTimeRequired}
+              minutes={minutes}
             />
           )}
           {activeModalContent === begin && (
