@@ -38,6 +38,7 @@ const generateBarracksData = (lvl = 1) => {
     barracklvl2: 0,
     barracklvl3: 0,
     barracklvl4: 0,
+    maxBarracksForCurrentLvl: Math.floor((10 * lvl) / (2 ** lvl)),
     
   }
 };

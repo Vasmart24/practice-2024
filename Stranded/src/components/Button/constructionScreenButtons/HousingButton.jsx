@@ -30,7 +30,15 @@ function HousingButtonLvl1({ disabled=false, handleSetMaterials }) {
                     wood.count -= housingData.lvl1.cost.wood;
                     console.log(wood);
                     handleSetMaterials(wood);
-                }}>+</Button>
+                }}>
+                    +
+                    <i className="building-cost">
+                        <h3>Стоимость строительства:</h3>
+                        <ul>
+                            <li>Брёвна: {housingData.lvl1.cost.wood}</li>
+                        </ul>
+                    </i>
+                </Button>
             </div>
         </div>
     );

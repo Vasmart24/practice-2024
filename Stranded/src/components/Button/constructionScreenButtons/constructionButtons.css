@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: space-between;
 
+    position: relative;
     z-index: 100;
 
     width: 130px;
@@ -18,9 +19,19 @@
     box-shadow: 0px 0px 10px #ffffff;
 }
 
-.buildings-button:hover {
-    background-color: transparent;
-    transition: all 0.25s;
+.building-cost {
+    display: none;
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+    z-index: 100;
+    padding: 10px;
+
+    background-color: #3e3e3e;
+}
+
+.building-cost ul {
+    list-style: none;
 }
 
 .buildings-button div {
@@ -53,6 +64,10 @@
     color: #fff;
     background-color: green;
     scale: 1.25;
+}
+
+.count-button:hover .building-cost {
+    display: block;
 }
 
 .farm-button {
