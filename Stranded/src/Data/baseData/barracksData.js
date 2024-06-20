@@ -22,6 +22,7 @@ const generateBarracksData = (lvl = 1) => {
     currentsoldiers: 0,
     maxSoldiers: 5 * lvl,
     soldiersBonus: {
+      hp: (12 * lvl) + 13,
       atk: Math.round(2 * (1.9 ** lvl)),
       def: {
         pure: Math.round(2 * (1.5 ** lvl)),
@@ -30,7 +31,7 @@ const generateBarracksData = (lvl = 1) => {
       dmg: {
         min: 2 + lvl === 1 ? 2 : (3 * lvl),
         max: 2 + lvl === 1 ? 4 : (5 * lvl),
-      }
+      },
     },
 
     barracklvl1: 0,

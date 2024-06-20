@@ -3,6 +3,7 @@ import RangeSlider from "./RangeSlider.jsx";
 import { raidModalStates } from "../../Data/reusableStatesStrings.js";
 import raidScreenPropsData from "../../Data/screenData/raidScreenPropsData.js";
 import suppliesData from "./../../Data/headerData/suppliesData.js";
+import materialsData from "../../Data/headerData/materialsData.js";
 import { useState } from "react";
 
 // Главный компонент ScreenSearch, в который включаем RangeSlider
@@ -26,7 +27,7 @@ export default function RaidModal({
   };
 
   if (resType === raidScreenPropsData.resTypes.supplies) {
-    minRes = suppliesData[resLevel].min * resMult;
+    minRes = [suppliesData][resLevel].min * resMult;
     maxRes = suppliesData[resLevel].max * resMult;
   }
 
