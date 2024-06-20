@@ -17,12 +17,20 @@
   /* padding-right: 2em; */
 }
 
-.hamster-retard {
-  background-image: url("https://vseigru.net/flash/all/1/igra-khomyak-koin-kripta-bitva.jpg");
+.battle_screen-button.enemy-rat {
+  color: #fff;
+  background-image: url(../../assets/enemies/rat.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
-  animation: rotate 1s 1;
+  background-size: cover;
+}
+
+.battle_screen-button.enemy-rat:hover {
+  background-image: url(../../assets/enemies/rat.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  animation: rotate 0.25s 1;
 }
 
 @keyframes rotate {

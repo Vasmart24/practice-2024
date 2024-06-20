@@ -4,7 +4,7 @@ function AvangardCenterButton({ onClick, className, picture }) {
   console.log(picture);
   return (
     <Button className={className} onClick={onClick}>
-      <div>Место размещения отряда</div>
+      <div></div>
     </Button>
   );
 }

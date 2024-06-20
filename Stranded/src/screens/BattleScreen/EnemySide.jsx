@@ -108,7 +108,7 @@ export default function EnemySide({ setScreen }) {
           <div>
             <AvangardCenterButton
               onClick={handleSetHP}
-              className="battle_screen-button hamster-retard"
+              className="battle_screen-button enemy-rat"
             />
           </div>
         </Dropdown>
