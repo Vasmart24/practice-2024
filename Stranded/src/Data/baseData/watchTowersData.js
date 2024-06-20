@@ -41,3 +41,12 @@ const generateWatchtowersData = (lvl = 1) => {
     
   };
 };
+
+const watchTowersData = {
+  lvl1: generateWatchtowersData(1),
+  lvl2: generateWatchtowersData(2),
+  lvl3: generateWatchtowersData(3),
+  lvl4: generateWatchtowersData(4),
+};
+
+export default watchTowersData;
