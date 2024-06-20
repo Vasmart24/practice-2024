@@ -90,6 +90,20 @@
     background-size: cover;  
 }
 
+.town-hall-button {
+    background-image: url(../../../assets/buildings/townHall.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;  
+}
+
+.wall-button {
+    background-image: url(../../../assets/buildings/wall.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;  
+}
+
 .locked-building-button {
     display: flex;
     flex-direction: column;
