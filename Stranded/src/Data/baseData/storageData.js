@@ -28,12 +28,14 @@ const generateStorageData = (lvl = 1) => {
   };
 };
 
-export default storageData = {
+const storageData = {
   lvl1: generateStorageData(1),
   lvl2: generateStorageData(2),
   lvl3: generateStorageData(3),
   lvl4: generateStorageData(4),
 };
+
+export default storageData;
 
 // 1 - 5/30
 // 2 - 5/60
