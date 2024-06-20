@@ -9,8 +9,8 @@ export default class EnemyUnit {
   constructor ( name = '', hp = 1, atk = 1,
     def = {pure: 0, percent: 0},
     dmg = {min: 1, max: 1},
-    picture = '',
     initiative = 1,
+    picture = '',
     count = 1,
   ) 
     {
