@@ -3,6 +3,7 @@ export const screenStates = {
   resources: "resources",
   search: "search",
   equipment: "equipment",
+  construction: "construction",
 };
 
 export const raidModalStates = {
