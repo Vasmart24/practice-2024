@@ -19,14 +19,15 @@
 
 .battle_screen-button.enemy-rat {
   color: #fff;
-  background-image: url(../../assets/enemies/rat.png);
+  background-image: url(../../assets/enemies/rat-transparent.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 .battle_screen-button.enemy-rat:hover {
-  background-image: url(../../assets/enemies/rat.png);
+  background-color: #ff6961;
+  background-image: url(../../assets/enemies/rat-transparent.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
