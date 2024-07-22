@@ -11,6 +11,13 @@ import {
   raidModalStates,
 } from "../../Data/reusableStatesStrings";
 import materialsData from "../../Data/headerData/materialsData.js";
+import RangeSlider from "../SearchResourcesScreen/RangeSlider.jsx";
+import Button from "../../components/Button/Button.jsx";
+
+// RAIDMODAL START
+import raidScreenPropsData from "../../Data/screenData/raidScreenPropsData.js";
+import suppliesData from "./../../Data/headerData/suppliesData.js";
+// RAIDMODAL END
 
 export default function RaidScreen({
   handleSetMaterials,
@@ -28,7 +35,6 @@ export default function RaidScreen({
   const [lootRange, setLootRange] = useState([0, 0]);
   const [timeRequired, setTimeRequired] = useState(0);
 
-  const [wood, ...materials] = materialsData;
   const max = lootRange[1] + 1;
   const min = lootRange[0];
   const loot = Math.floor(Math.random() * (max - min) + min);
@@ -52,6 +58,28 @@ export default function RaidScreen({
     footer: null,
     onCancel: () => setIsModalOpen(false),
   };
+
+  // RAIDMODAL START
+  const [wood, ...materials] = materialsData;
+  const [resMult, setResMult] = useState(0);
+  const [value, setValue] = useState(0); // Начальное значение ползунка
+  let minRes = 0;
+  let maxRes = 0;
+
+  const handleValueChange = (value) => {
+    setResMult(value / 30);
+    setTimeRequired(value);
+    setValue(value); // Обновляем значение стейта при изменении ползунка
+  };
+
+  if (resType === raidScreenPropsData.resTypes.supplies) {
+    minRes = suppliesData[resLevel].min * resMult;
+    maxRes = suppliesData[resLevel].max * resMult;
+  } else {
+    minRes = wood.min * resMult;
+    maxRes = wood.max * resMult;
+  }
+  // RAIDMODAL END
 
   return (
     <Dropdown {...dropdown}>
@@ -89,15 +117,42 @@ export default function RaidScreen({
         ></EasyResButton>
         <Modal {...modal}>
           {activeModalContent === search && (
-            <RaidModal
-              resLevel={resLevel}
-              resType={resType}
-              setActiveModalContent={setActiveModalContent}
-              setLootRange={setLootRange}
-              setTimeRequired={setTimeRequired}
-              timeRequired={timeRequired}
-              minutes={minutes}
-            />
+            // <RaidModal
+            //   resLevel={resLevel}
+            //   resType={resType}
+            //   setActiveModalContent={setActiveModalContent}
+            //   setLootRange={setLootRange}
+            //   setTimeRequired={setTimeRequired}
+            //   timeRequired={timeRequired}
+            //   minutes={minutes}
+            // />
+            <RaidModal>
+              <h1>Поиск ресурсов</h1>
+              <RangeSlider
+                setValue={setValue}
+                setResMult={setResMult}
+                setTimeRequired={setTimeRequired}
+                handleValueChange={handleValueChange}
+                value={value}
+                minutes={minutes}
+              />
+              <span>
+                Можно найти ресурсов: {minRes} — {maxRes}
+              </span>
+              <br />
+              <Button
+                onClick={() => {
+                  if (timeRequired > 0) {
+                    setLootRange([minRes, maxRes]);
+                    setTimeRequired(value);
+                    setActiveModalContent(raidModalStates.begin);
+                  }
+                }}
+                disabled={minutes >= 1440}
+              >
+                Начать поиск
+              </Button>
+            </RaidModal>
           )}
           {activeModalContent === begin && (
             <div>
@@ -112,16 +167,16 @@ export default function RaidScreen({
               <div>
                 <button
                   onClick={() => {
-                    if(resType === 'supplies'){
-                    handleSuppliesAddition(Math.floor(loot / 2));
-                    handleTimeAddition(timeRequired);
-                  } else {
-                    wood.count += Math.floor(loot / 2);
-                    handleSetMaterials(wood);
-                    handleTimeAddition(timeRequired)
-                  }
-                  handleSetScreen(start);
-                }}
+                    if (resType === "supplies") {
+                      handleSuppliesAddition(Math.floor(loot / 2));
+                      handleTimeAddition(timeRequired);
+                    } else {
+                      wood.count += Math.floor(loot / 2);
+                      handleSetMaterials(wood);
+                      handleTimeAddition(timeRequired);
+                    }
+                    handleSetScreen(start);
+                  }}
                 >
                   Сбежать
                 </button>
